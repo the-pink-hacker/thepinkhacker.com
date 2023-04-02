@@ -16,7 +16,7 @@ const props = defineProps({
     <div>{{ title }}</div>
     <ul>
       <li v-for="{ link, title } in options">
-        <a :href="link">{{ title }}</a>
+        <router-link :to="link">{{ title }}</router-link>
       </li>
     </ul>
   </div>
