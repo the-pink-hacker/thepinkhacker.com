@@ -3,7 +3,7 @@ import Dropdown from "./Dropdown.vue";
 </script>
 
 <template>
-  <div class="navbar">
+  <nav class="navbar">
     <RouterLink to="/" class="navbar-title">
       <div>ThePinkHacker</div>
     </RouterLink>
@@ -17,7 +17,7 @@ import Dropdown from "./Dropdown.vue";
       { title: 'CurseForge', link: '/socials/curseforge' },
       { title: 'Modrinth', link: '/socials/modrinth' },
     ]" />
-  </div>
+  </nav>
 </template>
 
 <style lang="scss" scoped>
