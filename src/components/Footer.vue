@@ -2,7 +2,7 @@
   <footer>
     <p>Created by: Ryan Garrett (ThePinkHacker)</p>
     <p>Hosted on: <a href="https://firebase.google.com/">Firebase</a></p>
-    <p>Source code hosted on: <a href="https://github.com">GitHub</a></p>
+    <p>Source code hosted on: <a href="https://github.com/RyanGar46/thepinkhacker.com">GitHub</a></p>
   </footer>
 </template>
 

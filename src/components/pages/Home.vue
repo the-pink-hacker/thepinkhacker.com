@@ -6,7 +6,7 @@ const count = ref(0);
 
 <template>
   <div>
-    <p>This website is under heavy construction right now. Check back later.</p>
+    <p><strong>This website is under heavy construction right now. Check back later.</strong></p>
     <button @click="count++">Counter: {{ count }}</button>
     <p>Here is an <RouterLink to="/">inline link</RouterLink>
     </p>
