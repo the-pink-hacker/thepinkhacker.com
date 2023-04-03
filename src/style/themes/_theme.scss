@@ -1,6 +1,13 @@
 :root {
   --background-color: #2b1533;
+  --background-accent-color: #100413;
+  --accent-color: #dc1ee6;
   --text-color: #e390e7;
+  --text-accent-color: #ffffff;
+  --link-color: #e350eb;
+  --link-hover-color: #ffffff;
+
+  --hover-time: 300ms;
 }
 
 @media (prefers-color-scheme: light) {

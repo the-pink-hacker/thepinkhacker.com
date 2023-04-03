@@ -4,6 +4,9 @@ import Dropdown from "./Dropdown.vue";
 
 <template>
   <div class="navbar">
+    <RouterLink to="/" class="navbar-title">
+      <div>ThePinkHacker</div>
+    </RouterLink>
     <Dropdown title="Projects" :options="[
       { title: 'Apollo', link: '/projects/apollo' },
       { title: 'Classic 3D', link: '/projects/classic-3d' },
@@ -17,5 +20,16 @@ import Dropdown from "./Dropdown.vue";
   </div>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
+.navbar {
+  display: flex;
+  background-color: var(--background-accent-color);
+}
+
+.navbar-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 8px;
+}
 </style>
