@@ -7,6 +7,7 @@ defineProps({
   options: Array<{
     title: string,
     link: string,
+    isRoute?: boolean,
   }>,
 });
 </script>
@@ -15,8 +16,9 @@ defineProps({
   <div class="dropdown">
     <div class="dropdown-title">{{ title }}</div>
     <ul class="dropdown-items">
-      <li v-for="{ link, title } in options" class="dropdown-item">
-        <RouterLink :to="link">{{ title }}</RouterLink>
+      <li v-for="{ link, title, isRoute } in options" class="dropdown-item">
+        <RouterLink v-if="isRoute === true || isRoute === undefined" :to="link">{{ title }}</RouterLink>
+        <a v-else :href="link">{{ title }}</a>
       </li>
     </ul>
   </div>

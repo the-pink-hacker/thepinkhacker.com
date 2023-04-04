@@ -4,9 +4,10 @@ import { ref } from "vue";
 defineProps({
   images: Array<{
     title: string,
-    alt: string,
+    alt?: string,
     src: string,
-    route: string,
+    link: string,
+    isRoute?: boolean,
   }>,
 });
 
@@ -23,9 +24,10 @@ function getSelectedClass(index: number) {
 
 <template>
   <div class="image-collection">
-    <div v-for="{ title, alt, src, route }, index in images" class="image-wrapper" @click="selected = index"
+    <div v-for="{ title, alt, src, link, isRoute }, index in images" class="image-wrapper" @click="selected = index"
       :class="getSelectedClass(index)">
-      <RouterLink v-if="isSelected(index)" class="image-link" :to="route"></RouterLink>
+      <a v-if="isSelected(index) && isRoute" class="image-link" :href="link"></a>
+      <RouterLink v-else-if="isSelected(index)" class="image-link" :to="link"></RouterLink>
       <div class="image-title-wrapper">
         <div class="image-title">{{ title }}</div>
       </div>
@@ -36,11 +38,14 @@ function getSelectedClass(index: number) {
 
 <style lang="scss" scoped>
 .image-collection {
+  position: relative;
   display: flex;
   width: 100%;
   height: 300px;
   margin: 8px 0;
   overflow: scroll hidden;
+  background-color: var(--background-accent-color);
+  z-index: 0;
 }
 
 .image-wrapper {
@@ -49,16 +54,19 @@ function getSelectedClass(index: number) {
   display: flex;
   flex: 1 0 auto;
   width: 100px;
+  min-width: 100px;
   height: 100%;
   user-select: none;
   overflow: hidden;
-  transition: width var(--ui-move-time);
+  transition-duration: var(--ui-move-time);
+  transition-property: width, min-width;
   justify-content: center;
   align-items: center;
 
   &.selected {
     flex: 0 0 auto;
-    width: 300px;
+    width: 33vw;
+    min-width: 300px;
 
     .image-title-wrapper {
       min-height: fit-content;
