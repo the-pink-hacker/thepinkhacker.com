@@ -44,13 +44,14 @@ function getSelectedClass(index: number) {
 }
 
 .image-wrapper {
+  cursor: pointer;
   position: relative;
   display: flex;
   flex: 1 1 auto;
   width: 100%;
   height: 20vw;
   user-select: none;
-  overflow: h;
+  overflow: hidden;
   transition: width var(--ui-move-time);
 
   &.selected {
