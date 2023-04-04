@@ -44,6 +44,7 @@ function getSelectedClass(index: number) {
   height: 300px;
   margin: 8px 0;
   overflow: scroll hidden;
+  gap: 8px;
   background-color: var(--background-accent-color);
   z-index: 0;
 }
