@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <main>
         <p>Apollo is a modern space Minecraft Mod in heavy development currently</p>
-    </div>
+    </main>
 </template>

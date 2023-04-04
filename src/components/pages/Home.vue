@@ -46,12 +46,12 @@ const minecraftProjects = [
 </script>
 
 <template>
-  <div>
+  <main>
     <p><strong>This website is under heavy construction right now. Check back later.</strong></p>
     <button @click="count++">Counter: {{ count }}</button>
     <p>Here is an <RouterLink to="/">inline link</RouterLink>
     </p>
     <h1>Minecraft Projects</h1>
     <ImageHoverCollectionHorizontal :images="minecraftProjects" />
-  </div>
+  </main>
 </template>

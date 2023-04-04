@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import { remove } from "@vue/shared";
 import { ref } from "vue";
 
 defineProps({
@@ -20,12 +21,32 @@ function isSelected(index: number) {
 function getSelectedClass(index: number) {
   if (isSelected(index)) return "selected";
 }
+
+function hover(event: MouseEvent) {
+  const target = <HTMLElement>event.currentTarget;
+  const relativeMouseX = event.clientX - target.getBoundingClientRect().x;
+  const relativeMouseY = event.clientY - target.getBoundingClientRect().y;
+  const offsetX = -(relativeMouseX - (target.clientWidth / 2)) / target.clientWidth;
+  const offsetY = -(relativeMouseY - (target.clientHeight / 2)) / target.clientHeight;
+  $(target).css({
+    "--image-offset-x": `${offsetX}`,
+    "--image-offset-y": `${offsetY}`,
+  });
+}
+
+function resetHover(event: MouseEvent) {
+  const target = <HTMLElement>event.currentTarget;
+  $(target).css({
+    "--image-offset-x": "",
+    "--image-offset-y": "",
+  });
+}
 </script>
 
 <template>
   <div class="image-collection">
     <div v-for="{ title, alt, src, link, isRoute }, index in images" class="image-wrapper" @click="selected = index"
-      :class="getSelectedClass(index)">
+      @mousemove="hover" @mouseleave="resetHover" :class="getSelectedClass(index)">
       <a v-if="isSelected(index) && isRoute" class="image-link" :href="link"></a>
       <RouterLink v-else-if="isSelected(index)" class="image-link" :to="link"></RouterLink>
       <div class="image-title-wrapper">
@@ -84,6 +105,10 @@ function getSelectedClass(index: number) {
     &:hover .image-title::after {
       width: 100%;
     }
+
+    &:hover img {
+      transform: translate(calc(var(--image-offset-x) * var(--image-zoom-move)), calc(var(--image-offset-y) * var(--image-zoom-move))) scale(calc(100% + var(--image-zoom-scale)));
+    }
   }
 
   &:hover .image-title-wrapper,
@@ -96,6 +121,8 @@ function getSelectedClass(index: number) {
 }
 
 .image-title-wrapper {
+  --image-offset-x: 0;
+  --image-offset-y: 0;
   opacity: 0;
   display: flex;
   background-color: transparent;
@@ -138,6 +165,7 @@ function getSelectedClass(index: number) {
 }
 
 img {
+  transition: transform 100ms;
   width: 100%;
   height: 100%;
   pointer-events: none;

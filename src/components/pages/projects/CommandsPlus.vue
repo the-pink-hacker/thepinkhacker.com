@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <main>
         <p>Commands+ is a mod that adds extra commands to Minecraft</p>
-    </div>
+    </main>
 </template>
