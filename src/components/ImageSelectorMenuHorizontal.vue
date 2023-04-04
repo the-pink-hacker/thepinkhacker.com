@@ -38,18 +38,18 @@ function getSelectedClass(index: number) {
 .image-collection {
   display: flex;
   width: 100%;
-  height: auto;
+  height: 300px;
   margin: 8px 0;
-  overflow: hidden;
+  overflow: scroll hidden;
 }
 
 .image-wrapper {
   cursor: pointer;
   position: relative;
   display: flex;
-  flex: 1 1 auto;
-  width: 100%;
-  height: 20vw;
+  flex: 1 0 auto;
+  width: 100px;
+  height: 100%;
   user-select: none;
   overflow: hidden;
   transition: width var(--ui-move-time);
@@ -57,7 +57,8 @@ function getSelectedClass(index: number) {
   align-items: center;
 
   &.selected {
-    width: 300%;
+    flex: 0 0 auto;
+    width: 300px;
 
     .image-title-wrapper {
       min-height: fit-content;
@@ -80,17 +81,17 @@ function getSelectedClass(index: number) {
   &.selected .image-title-wrapper {
     font-size: var(--font-large-size);
     opacity: 100%;
-    backdrop-filter: brightness(33%);
-    transition-duration: 500ms;
+    background-color: rgba(0, 0, 0, 67%);
+    transition-duration: var(--ui-move-time);
   }
 }
 
 .image-title-wrapper {
   opacity: 0;
   display: flex;
-  backdrop-filter: brightness(100%);
+  background-color: transparent;
   transition-duration: var(--hover-time);
-  transition-property: backdrop-filter, width, height;
+  transition-property: background-color, width, height;
   position: absolute;
   width: 100%;
   height: 100%;
