@@ -7,6 +7,7 @@ import Home from "./components/pages/Home.vue";
 import Apollo from "./components/pages/projects/Apollo.vue";
 import Classic3D from "./components/pages/projects/Classic3D.vue";
 import CommandsPlus from "./components/pages/projects/CommandsPlus.vue";
+import NotFound from "./components/pages/NotFound.vue";
 
 (<any>window).$ = $;
 
@@ -17,6 +18,10 @@ createApp(App)
             {
                 path: "/",
                 component: Home,
+            },
+            {
+                path: "/:catchall(.*)",
+                component: NotFound,
             },
             {
                 path: "/projects/apollo",
