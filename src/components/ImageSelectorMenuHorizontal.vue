@@ -47,8 +47,8 @@ function resetHover(event: MouseEvent) {
   <div class="image-collection">
     <div v-for="{ title, alt, src, link, isRoute }, index in images" class="image-wrapper" @click="selected = index"
       @mousemove="hover" @mouseleave="resetHover" :class="getSelectedClass(index)">
-      <a v-if="isSelected(index) && isRoute" class="image-link" :href="link"></a>
-      <RouterLink v-else-if="isSelected(index)" class="image-link" :to="link"></RouterLink>
+      <a v-if="isSelected(index) && isRoute === false" class="image-link" :href="link" />
+      <RouterLink v-else-if="isSelected(index)" :to="link" class="image-link" />
       <div class="image-title-wrapper">
         <div class="image-title">{{ title }}</div>
       </div>
@@ -102,12 +102,14 @@ function resetHover(event: MouseEvent) {
       font-size: var(--font-large-size);
     }
 
-    &:hover .image-title::after {
-      width: 100%;
-    }
+    &:hover {
+      .image-title::after {
+        width: 100%;
+      }
 
-    &:hover img {
-      transform: translate(calc(var(--image-offset-x) * var(--image-zoom-move)), calc(var(--image-offset-y) * var(--image-zoom-move))) scale(calc(100% + var(--image-zoom-scale)));
+      img {
+        transform: translate(calc(var(--image-offset-x) * var(--image-zoom-move)), calc(var(--image-offset-y) * var(--image-zoom-move))) scale(calc(100% + var(--image-zoom-scale)));
+      }
     }
   }
 

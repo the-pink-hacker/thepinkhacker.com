@@ -40,7 +40,7 @@ const minecraftProjects = [
   {
     title: "hi",
     src: "https://picsum.photos/seed/ginmn/1920/1080",
-    link: "",
+    link: ""
   },
 ];
 </script>
