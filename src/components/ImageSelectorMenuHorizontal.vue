@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-import { remove } from "@vue/shared";
 import { ref } from "vue";
 
 defineProps({
@@ -148,6 +147,7 @@ function resetHover(event: MouseEvent) {
 
   &::after {
     transition-duration: var(--hover-time);
+    transition-delay: var(--hover-time);
     transition-property: width;
     display: block;
     content: "";
