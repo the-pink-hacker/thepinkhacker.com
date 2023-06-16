@@ -1,0 +1,22 @@
+:root {
+  --background-color: #2b1533;
+  --background-accent-color: #100413;
+  --accent-color: #dc1ee6;
+  --text-color: #e390e7;
+  --text-accent-color: #ffffff;
+  --link-color: #e350eb;
+  --link-hover-color: #ffffff;
+
+  --hover-time: 300ms;
+  --ui-move-time: 500ms;
+
+  --underline-size: 2px;
+  --underline-offset-size: 6px;
+  --font-large-size: 1.5rem;
+  --image-zoom-scale: 33%;
+  --image-zoom-move: 12.5%;
+}
+
+@media (prefers-color-scheme: light) {
+  @import "light";
+}
