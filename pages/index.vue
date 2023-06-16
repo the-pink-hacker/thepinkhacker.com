@@ -42,6 +42,13 @@ const minecraftProjects = [
     link: ""
   },
 ];
+
+useSeoMeta({
+  title: "The Pink Hacker",
+  description: "A personal website.",
+  ogTitle: "The Pink Hacker",
+  ogDescription: "A personal website",
+});
 </script>
 
 <template>
@@ -51,6 +58,6 @@ const minecraftProjects = [
     <p>Here is an <RouterLink to="/">inline link</RouterLink>
     </p>
     <h1>Minecraft Projects</h1>
-    <ImageHoverCollectionHorizontal :images="minecraftProjects" />
+    <ImageSelectorMenuHorizontal :images="minecraftProjects" />
   </main>
 </template>
