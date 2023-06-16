@@ -1,5 +1,0 @@
-<template>
-  <main>
-    <p>Error 404: Page Not Found</p>
-  </main>
-</template>
