@@ -12,6 +12,8 @@ defineProps({
 });
 
 const selected = ref(0);
+const imageOffsetX = ref(0);
+const imageOffsetY = ref(0);
 
 function isSelected(index: number) {
   return index == selected.value;
@@ -25,27 +27,21 @@ function hover(event: MouseEvent) {
   const target = <HTMLElement>event.currentTarget;
   const relativeMouseX = event.clientX - target.getBoundingClientRect().x;
   const relativeMouseY = event.clientY - target.getBoundingClientRect().y;
-  const offsetX = -(relativeMouseX - (target.clientWidth / 2)) / target.clientWidth;
-  const offsetY = -(relativeMouseY - (target.clientHeight / 2)) / target.clientHeight;
-  $(target).css({
-    "--image-offset-x": `${offsetX}`,
-    "--image-offset-y": `${offsetY}`,
-  });
+  imageOffsetX.value = -(relativeMouseX - (target.clientWidth / 2)) / target.clientWidth;
+  imageOffsetY.value = -(relativeMouseY - (target.clientHeight / 2)) / target.clientHeight;
 }
 
-function resetHover(event: MouseEvent) {
-  const target = <HTMLElement>event.currentTarget;
-  $(target).css({
-    "--image-offset-x": "",
-    "--image-offset-y": "",
-  });
+function resetHover() {
+  imageOffsetX.value = 0;
+  imageOffsetY.value = 0;
 }
 </script>
 
 <template>
   <div class="image-collection">
     <div v-for="{ title, alt, src, link, isRoute }, index in images" class="image-wrapper" @click="selected = index"
-      @mousemove="hover" @mouseleave="resetHover" :class="getSelectedClass(index)">
+      @mousemove="hover" @mouseleave="resetHover" :class="getSelectedClass(index)"
+      :style="'--image-offset-x:' + imageOffsetX + ';--image-offset-y:' + imageOffsetY + ';'">
       <a v-if="isSelected(index) && isRoute === false" class="image-link" :href="link" />
       <RouterLink v-else-if="isSelected(index)" :to="link" class="image-link" />
       <div class="image-title-wrapper">
