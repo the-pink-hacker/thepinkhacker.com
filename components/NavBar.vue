@@ -1,6 +1,3 @@
-<script lang="ts" setup>
-</script>
-
 <template>
   <nav class="navbar">
     <RouterLink to="/" class="navbar-title">

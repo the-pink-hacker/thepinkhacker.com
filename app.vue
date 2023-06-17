@@ -18,3 +18,9 @@ useHead({
   <NuxtPage />
   <Footer />
 </template>
+
+<style lang="scss">
+main {
+  margin: 8px;
+}
+</style>
