@@ -13,14 +13,16 @@ defineProps({
 </script>
 
 <template>
-  <div class="dropdown">
+  <div class="dropdown" tabindex="0">
     <div class="dropdown-title">{{ title }}</div>
-    <ul class="dropdown-items">
-      <li v-for="{ link, title, isRoute } in options" class="dropdown-item">
-        <RouterLink v-if="isRoute === true || isRoute === undefined" :to="link">{{ title }}</RouterLink>
-        <a v-else :href="link">{{ title }}</a>
-      </li>
-    </ul>
+    <div class="dropdown-items-wrapper">
+      <ul class="dropdown-items">
+        <li v-for="{ link, title, isRoute } in options" class="dropdown-item">
+          <RouterLink v-if="isRoute === true || isRoute === undefined" :to="link">{{ title }}</RouterLink>
+          <a v-else :href="link">{{ title }}</a>
+        </li>
+      </ul>
+    </div>
   </div>
 </template>
 
@@ -32,11 +34,18 @@ defineProps({
   flex-direction: column;
   position: relative;
 
-  &:hover .dropdown-items {
-    display: flex;
-    flex-direction: column;
-    height: max-content;
-    width: max-content;
+  &:hover,
+  &:focus {
+    .dropdown-items-wrapper {
+      padding-top: 0;
+    }
+
+    .dropdown-items {
+      display: flex;
+      flex-direction: column;
+      height: max-content;
+      width: max-content;
+    }
   }
 }
 
@@ -48,14 +57,19 @@ defineProps({
   @include bordered-block;
   list-style: none;
   display: none;
-  position: absolute;
-  left: 0;
-  top: 100%;
-  bottom: 0;
   margin-top: 0;
 }
 
 .dropdown-item {
   list-style: none;
+}
+
+.dropdown-items-wrapper {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  bottom: 0;
+  padding-top: 30px;
+  transition: padding-top 250ms ease;
 }
 </style>

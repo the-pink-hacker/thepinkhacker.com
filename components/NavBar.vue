@@ -13,9 +13,9 @@
     ]" />
     <Dropdown title="Socials" :options="[
       { title: 'Tumblr', link: 'https://the-pink-hacker.tumblr.com', isRoute: false },
-      { title: 'GitHub', link: '/socials/github' },
-      { title: 'CurseForge', link: '/socials/curseforge' },
-      { title: 'Modrinth', link: '/socials/modrinth' },
+      { title: 'GitHub', link: 'https://github.com/RyanThePinkHacker', isRoute: false },
+      { title: 'CurseForge', link: 'https://www.curseforge.com/members/thepinkhacker/projects', isRoute: false },
+      { title: 'Modrinth', link: 'https://modrinth.com/user/ThePinkHacker', isRoute: false },
     ]" />
   </nav>
 </template>
