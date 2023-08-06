@@ -15,12 +15,8 @@ useHead({
 
 <template>
   <NavBar />
-  <NuxtPage />
+  <main>
+    <NuxtPage />
+  </main>
   <Footer />
 </template>
-
-<style lang="scss">
-main {
-  margin: 8px;
-}
-</style>

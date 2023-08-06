@@ -1,8 +1,8 @@
 <template>
-  <main>
+  <div>
     <p>{{ error }}</p>
     <button @click="handleError">Go Home</button>
-  </main>
+  </div>
 </template>
 
 <script lang="ts" setup>
