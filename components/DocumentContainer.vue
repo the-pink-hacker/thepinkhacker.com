@@ -15,7 +15,7 @@
 
 .document-container {
     background-color: var(--background-middle-color);
-    width: var(--content-width);
+    max-width: var(--content-width);
     padding: 8px;
 }
 </style>
