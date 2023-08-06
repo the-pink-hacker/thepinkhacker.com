@@ -1,12 +1,12 @@
 <template>
   <div>
     <p>{{ error }}</p>
-    <button @click="handleError">Go Home</button>
+    <BorderedButton @click="handleError">Go Home</BorderedButton>
   </div>
 </template>
 
 <script lang="ts" setup>
-const props = defineProps({
+defineProps({
   error: Object,
 });
 

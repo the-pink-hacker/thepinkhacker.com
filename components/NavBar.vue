@@ -14,9 +14,9 @@
       { title: 'CurseForge', link: 'https://www.curseforge.com/members/thepinkhacker/projects', isRoute: false },
       { title: 'Modrinth', link: 'https://modrinth.com/user/ThePinkHacker', isRoute: false },
     ]" />
-    <Dropdown title="Blog" :options="[
-      { title: 'Testing', link: '/blog/testing' },
-    ]" />
+    <BorderedBlock>
+      <RouterLink to="/blog/overview">Blog</RouterLink>
+    </BorderedBlock>
   </nav>
 </template>
 

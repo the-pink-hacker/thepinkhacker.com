@@ -10,7 +10,7 @@
 .document-container-wrapper {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    align-items: center;
 }
 
 .document-container {

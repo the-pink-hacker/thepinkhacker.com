@@ -52,7 +52,7 @@ useSeoMeta({
 <template>
   <div>
     <p><strong>This website is under heavy construction right now. Check back later.</strong></p>
-    <button @click="count++">Counter: {{ count }}</button>
+    <BorderedButton @click="count++">Counter: {{ count }}</BorderedButton>
     <p>Here is an <RouterLink to="/">inline link</RouterLink>
     </p>
     <h1>Minecraft Projects</h1>

@@ -14,21 +14,19 @@ defineProps({
 
 <template>
   <div class="dropdown" tabindex="0">
-    <div class="dropdown-title">{{ title }}</div>
+    <BorderedBlock class="dropdown-title">{{ title }}</BorderedBlock>
     <div class="dropdown-items-wrapper">
-      <ul class="dropdown-items">
+      <BorderedBlock class="dropdown-items" tag="ul">
         <li v-for="{ link, title, isRoute } in options" class="dropdown-item">
           <RouterLink v-if="isRoute === true || isRoute === undefined" :to="link">{{ title }}</RouterLink>
           <a v-else :href="link">{{ title }}</a>
         </li>
-      </ul>
+      </BorderedBlock>
     </div>
   </div>
 </template>
 
 <style lang="scss" scoped>
-@import "/assets/style/abstract/mixins";
-
 .dropdown {
   display: flex;
   flex-direction: column;
@@ -49,12 +47,7 @@ defineProps({
   }
 }
 
-.dropdown-title {
-  @include bordered-block;
-}
-
 .dropdown-items {
-  @include bordered-block;
   list-style: none;
   display: none;
   margin-top: 0;
