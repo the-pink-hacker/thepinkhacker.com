@@ -1,13 +1,15 @@
 <template>
     <h1>Welcome To My Blog</h1>
     <div class="blog-posts">
-        <ContentQuery :only="['_path', 'title', 'description']" v-slot="{ data }">
-            <article v-for="{ _path, title, description } in data" class="blog-post-card">
-                <h1>
-                    <RouterLink :to="_path">{{ title }}</RouterLink>
-                </h1>
-                <p>{{ description }}</p>
-            </article>
+        <ContentQuery :only="['_path', 'title', 'description', 'draft']" v-slot="{ data }">
+            <template v-for="{ _path, title, description, draft } in data">
+                <article v-if="draft !== true" class="blog-post-card">
+                    <h1>
+                        <RouterLink :to="_path">{{ title }}</RouterLink>
+                    </h1>
+                    <p>{{ description }}</p>
+                </article>
+            </template>
         </ContentQuery>
     </div>
 </template>
