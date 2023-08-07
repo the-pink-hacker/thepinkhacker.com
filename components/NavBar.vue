@@ -1,7 +1,8 @@
 <template>
   <nav class="navbar">
     <RouterLink to="/" class="navbar-title">
-      <div>ThePinkHacker</div>
+      <img class="navbar-logo" alt="The Finite Doctor logo"
+        src="https://64.media.tumblr.com/9f8c7f74bae8fbed95da32b8f828057c/13b7d9e2059964e1-78/s512x512u_c1/8984afa2cfbeaa6d14ccfed2d939b585efde4048.jpg" />
     </RouterLink>
     <Dropdown title="Projects" :options="[
       { title: 'Apollo', link: '/projects/apollo' },
@@ -31,5 +32,11 @@
   flex-direction: column;
   justify-content: center;
   margin: 8px;
+}
+
+
+// TODO: Width shouldn't be fixed
+.navbar-logo {
+  width: 48px;
 }
 </style>
