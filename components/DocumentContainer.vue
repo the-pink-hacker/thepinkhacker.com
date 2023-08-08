@@ -15,7 +15,9 @@
 
 .document-container {
     background-color: var(--background-middle-color);
+    width: 100%;
     max-width: var(--content-width);
     padding: 8px;
+    box-sizing: border-box;
 }
 </style>
