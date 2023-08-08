@@ -4,11 +4,6 @@ defineProps({
     type: String,
     required: true,
   },
-  options: Array<{
-    title: string,
-    link: string,
-    isRoute?: boolean,
-  }>,
 });
 </script>
 
@@ -17,16 +12,13 @@ defineProps({
     <BorderedBlock class="dropdown-title">{{ title }}</BorderedBlock>
     <div class="dropdown-items-wrapper">
       <BorderedBlock class="dropdown-items" tag="ul">
-        <li v-for="{ link, title, isRoute } in options" class="dropdown-item">
-          <NuxtLink v-if="isRoute === true || isRoute === undefined" :to="link">{{ title }}</NuxtLink>
-          <a v-else :href="link">{{ title }}</a>
-        </li>
+        <slot />
       </BorderedBlock>
     </div>
   </div>
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .dropdown {
   display: flex;
   flex-direction: column;
@@ -51,10 +43,6 @@ defineProps({
   list-style: none;
   display: none;
   margin-top: 0;
-}
-
-.dropdown-item {
-  list-style: none;
 }
 
 .dropdown-items-wrapper {

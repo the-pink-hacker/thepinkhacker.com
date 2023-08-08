@@ -3,17 +3,18 @@
     <RouterLink to="/" class="navbar-title">
       <img class="navbar-logo" alt="The Finite Doctor logo" src="/image/icon/the-finite-doctor.png" />
     </RouterLink>
-    <Dropdown title="Projects" :options="[
-      { title: 'Apollo', link: '/projects/apollo' },
-      { title: 'Classic 3D', link: '/projects/classic-3d' },
-      { title: 'Commands+', link: '/projects/commands-plus' },
-    ]" />
-    <Dropdown title="Socials" :options="[
-      { title: 'Tumblr', link: 'https://the-pink-hacker.tumblr.com', isRoute: false },
-      { title: 'GitHub', link: 'https://github.com/RyanThePinkHacker', isRoute: false },
-      { title: 'CurseForge', link: 'https://www.curseforge.com/members/thepinkhacker/projects', isRoute: false },
-      { title: 'Modrinth', link: 'https://modrinth.com/user/ThePinkHacker', isRoute: false },
-    ]" />
+    <Dropdown title="Projects">
+      <DropdownItem to="/projects/apollo">Apollo</DropdownItem>
+      <DropdownItem to="/projects/classic-3d">Classic 3D</DropdownItem>
+      <DropdownItem to="/projects/commands-plus">Commands+</DropdownItem>
+    </Dropdown>
+    <Dropdown title="Socials">
+      <DropdownItem to="https://the-pink-hacker.tumblr.com">Tumblr</DropdownItem>
+      <DropdownItem to="https://github.com/RyanThePinkHacker">GitHub</DropdownItem>
+      <DropdownItem to="https://www.curseforge.com/members/thepinkhacker/projects">CurseForge
+      </DropdownItem>
+      <DropdownItem to="https://modrinth.com/user/ThePinkHacker">Modrinth</DropdownItem>
+    </Dropdown>
     <BorderedBlock>
       <NuxtLink to="/blog/overview">Blog</NuxtLink>
     </BorderedBlock>
