@@ -53,7 +53,7 @@ useSeoMeta({
     <div>
         <p><strong>This website is under heavy construction right now. Check back later.</strong></p>
         <BorderedButton @click="count++">Counter: {{ count }}</BorderedButton>
-        <p>Here is an <RouterLink to="/">inline link</RouterLink>
+        <p>Here is an <NuxtLink to="/">inline link</NuxtLink>
         </p>
         <h1>Minecraft Projects</h1>
         <ImageSelectorMenuHorizontal :images="minecraftProjects" />

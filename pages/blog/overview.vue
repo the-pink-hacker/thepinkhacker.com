@@ -33,7 +33,7 @@ function formatPostDate(date: string) {
             <template v-for="{ _path, title, description, draft, date } in data">
                 <article v-if="draft !== true" class="blog-post-card">
                     <h1>
-                        <RouterLink :to="_path">{{ title }}</RouterLink>
+                        <NuxtLink :to="_path">{{ title }}</NuxtLink>
                     </h1>
                     <time v-if="date != null" :datetime="date" :title="formatPostDateLong(date)">{{ formatPostDate(date)
                     }}</time>

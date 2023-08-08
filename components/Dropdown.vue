@@ -18,7 +18,7 @@ defineProps({
     <div class="dropdown-items-wrapper">
       <BorderedBlock class="dropdown-items" tag="ul">
         <li v-for="{ link, title, isRoute } in options" class="dropdown-item">
-          <RouterLink v-if="isRoute === true || isRoute === undefined" :to="link">{{ title }}</RouterLink>
+          <NuxtLink v-if="isRoute === true || isRoute === undefined" :to="link">{{ title }}</NuxtLink>
           <a v-else :href="link">{{ title }}</a>
         </li>
       </BorderedBlock>

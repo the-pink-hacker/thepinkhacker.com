@@ -15,7 +15,7 @@
       { title: 'Modrinth', link: 'https://modrinth.com/user/ThePinkHacker', isRoute: false },
     ]" />
     <BorderedBlock>
-      <RouterLink to="/blog/overview">Blog</RouterLink>
+      <NuxtLink to="/blog/overview">Blog</NuxtLink>
     </BorderedBlock>
   </nav>
 </template>

@@ -41,7 +41,7 @@ function resetHover() {
       @mousemove="hover" @mouseleave="resetHover" :class="getSelectedClass(index)"
       :style="'--image-offset-x:' + imageOffsetX + ';--image-offset-y:' + imageOffsetY + ';'">
       <a v-if="isSelected(index) && isRoute === false" class="image-link" :href="link" />
-      <RouterLink v-else-if="isSelected(index)" :to="link" class="image-link" />
+      <NuxtLink v-else-if="isSelected(index)" :to="link" class="image-link" />
       <div class="image-title-wrapper">
         <div class="image-title">{{ title }}</div>
       </div>
