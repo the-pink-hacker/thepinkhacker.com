@@ -35,8 +35,10 @@ function formatPostDate(date: string) {
                     <h1>
                         <NuxtLink :to="_path">{{ title }}</NuxtLink>
                     </h1>
-                    <time v-if="date != null" :datetime="date" :title="formatPostDateLong(date)">{{ formatPostDate(date)
-                    }}</time>
+                    <ClientOnly>
+                        <time v-if="date != null" :datetime="date" :title="formatPostDateLong(date)">{{ formatPostDate(date)
+                        }}</time>
+                    </ClientOnly>
                     <p>{{ description }}</p>
                 </article>
             </template>

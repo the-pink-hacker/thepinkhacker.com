@@ -4,8 +4,8 @@
             <ContentRenderer :value="doc" />
 
             <Head>
-                <Meta name="og:title" :content="doc.title" />
-                <Meta name="og:description" :content="doc.description" />
+                <Meta property="og:title" :content="doc.title" />
+                <Meta property="og:description" :content="doc.description" />
             </Head>
         </ContentDoc>
     </DocumentContainer>
