@@ -7,4 +7,12 @@ export default defineNuxtConfig({
   modules: [
     "@nuxt/content"
   ],
+  content: {
+    highlight: {
+      theme: "github-dark",
+      preload: [
+        "rust"
+      ],
+    },
+  },
 })

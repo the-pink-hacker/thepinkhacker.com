@@ -17,7 +17,20 @@
     background-color: var(--background-middle-color);
     width: 100%;
     max-width: var(--content-width);
+    padding: 16px;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+pre code {
+    display: block;
     padding: 8px;
-    box-sizing: border-box;
+    background-color: var(--background-color);
+    border: 4px solid var(--accent-color);
 }
 </style>
