@@ -12,10 +12,6 @@ defineProps({
         type: String,
         default: "",
     },
-    draft: {
-        type: Boolean,
-        default: ""
-    },
     date: String,
 });
 

@@ -46,6 +46,7 @@ defineProps({
 }
 
 .dropdown-items-wrapper {
+  z-index: 1;
   position: absolute;
   left: 0;
   top: 100%;
