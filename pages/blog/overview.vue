@@ -1,12 +1,11 @@
 <template>
     <h1>Welcome To My Blog</h1>
     <div class="blog-posts">
-        <ContentQuery :only="['_path', 'title', 'description', 'draft', 'date']" v-slot="{ data }">
-            <template v-for="{ _path, title, description, draft, date } in data">
-                <BlogPostCard v-if="draft !== true" :path="_path" :title="title" :description="description" :draft="draft"
-                    :date="date" />
+        <ContentQuery :only="['_path', 'title', 'description', '_draft', 'date']" v-slot="{ data }">
+            <template v-for="{ _path, title, description, _draft, date } in data">
+                <BlogPostCard v-if="!_draft" :path="_path" :title="title" :description="description" :date="date" />
                 <DevOnly v-else>
-                    <BlogPostCard :path="_path" :title="title" :description="description" :draft="draft" :date="date" />
+                    <BlogPostCard :path="_path" :title="title" :description="description" :date="date" />
                 </DevOnly>
             </template>
         </ContentQuery>

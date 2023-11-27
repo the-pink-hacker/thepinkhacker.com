@@ -11,6 +11,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
 }
 
 .document-container {
@@ -18,6 +19,7 @@
     width: 100%;
     max-width: var(--content-width);
     padding: 16px;
+    box-sizing: border-box;
 }
 
 img {
