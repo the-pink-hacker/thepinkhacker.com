@@ -9,6 +9,10 @@ useHead({
       type: "image/x-icon",
       href: "/favicon.ico"
     },
+    {
+      rel: "me",
+      href: "https://social.linux.pizza/@ThePinkHacker"
+    },
   ]
 });
 </script>

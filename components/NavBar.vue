@@ -13,8 +13,7 @@
     <Dropdown title="Socials">
       <DropdownItem to="https://the-pink-hacker.tumblr.com">Tumblr</DropdownItem>
       <DropdownItem to="https://github.com/RyanThePinkHacker">GitHub</DropdownItem>
-      <DropdownItem to="https://www.curseforge.com/members/thepinkhacker/projects">CurseForge
-      </DropdownItem>
+      <DropdownItem to="https://social.linux.pizza/@ThePinkHacker">Mastodon</DropdownItem>
       <DropdownItem to="https://modrinth.com/user/ThePinkHacker">Modrinth</DropdownItem>
     </Dropdown>
 
