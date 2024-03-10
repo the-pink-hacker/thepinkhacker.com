@@ -20,15 +20,15 @@
             </OpcodeCard>
 
             <OpcodeCard
-                instruction="ld bc, nnn"
-                opcode="01 n n n "
+                instruction="ld bc, Mmn"
+                opcode="01 n m M"
                 cycles="3"
                 :adl-cycles="4"
                 :size="3"
                 :adl-size="4"
                 verbal-mnemonic="Load"
             >
-                Loads the 24-bit value <code>nnn</code> into register <code>bc</code>.
+                Loads the 24-bit value <code>Mmn</code> into register <code>bc</code>.
             </OpcodeCard>
 
             <OpcodeCard
@@ -61,7 +61,6 @@
                 flag-zero="as defined"
                 flag-half-carry="as defined"
                 flag-parity-overflow="overflow"
-                flag-add-sub="unaffected"
                 verbal-mnemonic="Increment"
             >
                 Increments register <code>b</code>.
@@ -76,7 +75,6 @@
                 flag-zero="as defined"
                 flag-half-carry="as defined"
                 flag-parity-overflow="as defined"
-                flag-add-sub="unaffected"
                 verbal-mnemonic="Decrement"
             >
                 Decrement register <code>b</code>.
@@ -166,7 +164,6 @@
                 flag-zero="as defined"
                 flag-half-carry="as defined"
                 flag-parity-overflow="overflow"
-                flag-add-sub="unaffected"
                 verbal-mnemonic="Increment"
             >
                 Increments register <code>c</code>.
@@ -181,7 +178,6 @@
                 flag-zero="as defined"
                 flag-half-carry="as defined"
                 flag-parity-overflow="overflow"
-                flag-add-sub="unaffected"
                 verbal-mnemonic="Decrement"
             >
                 Decrements register <code>c</code>.
@@ -221,25 +217,25 @@
                 verbal-mnemonic="Decrement Jump Not Zero"
             >
                 Register <code>b</code> is decremented. If register <code>b</code> wasn't set to zero, then the 8-bit
-                signed offset <code>d</code> is added to register <code>pc</code>. The offset is measured from the
-                following opcode's memory address.
+                signed displacement <code>d</code> is added to register <code>pc</code>. The displacement is measured
+                from the next opcode.
             </OpcodeCard>
 
             <OpcodeCard
-                instruction="ld de, nnn"
-                opcode="01 n n n "
+                instruction="ld de, Mmn"
+                opcode="11 n m M"
                 cycles="3"
                 :adl-cycles="4"
                 :size="3"
                 :adl-size="4"
                 verbal-mnemonic="Load"
             >
-                Loads the 24-bit value <code>nnn</code> into register <code>de</code>.
+                Loads the 24-bit value <code>Mmn</code> into register <code>de</code>.
             </OpcodeCard>
 
             <OpcodeCard
                 instruction="ld (de), a"
-                opcode="02"
+                opcode="12"
                 :size="1"
                 cycles="2"
                 verbal-mnemonic="Load"
@@ -250,7 +246,7 @@
 
             <OpcodeCard
                 instruction="inc de"
-                opcode="03"
+                opcode="13"
                 cycles="1"
                 :size="1"
                 verbal-mnemonic="Increment"
@@ -260,14 +256,13 @@
 
             <OpcodeCard
                 instruction="inc d"
-                opcode="04"
+                opcode="14"
                 cycles="1"
                 :size="1"
                 flag-sign="as defined"
                 flag-zero="as defined"
                 flag-half-carry="as defined"
                 flag-parity-overflow="overflow"
-                flag-add-sub="unaffected"
                 verbal-mnemonic="Increment"
             >
                 Increments register <code>d</code>.
@@ -275,14 +270,13 @@
 
             <OpcodeCard
                 instruction="dec d"
-                opcode="05"
+                opcode="15"
                 cycles="1"
                 :size="1"
                 flag-sign="as defined"
                 flag-zero="as defined"
                 flag-half-carry="as defined"
                 flag-parity-overflow="as defined"
-                flag-add-sub="unaffected"
                 verbal-mnemonic="Decrement"
             >
                 Decrement register <code>d</code>.
@@ -290,7 +284,7 @@
 
             <OpcodeCard
                 instruction="ld d, n"
-                opcode="06 n"
+                opcode="16 n"
                 cycles="2"
                 :size="2"
                 verbal-mnemonic="Load"
@@ -319,13 +313,13 @@
                 :size="2"
                 verbal-mnemonic="Jump Relative"
             >
-                Adds the 8-bit signed offset <code>d</code> to register <code>pc</code>. Offset is measured
-                from next opcode.
+                Adds the 8-bit signed displacement <code>d</code> to register <code>pc</code>. The displacement is
+                measured from the next opcode.
             </OpcodeCard>
 
             <OpcodeCard
                 instruction="add hl, de"
-                opcode="09"
+                opcode="19"
                 cycles="1"
                 :size="1"
                 flag-half-carry="as defined"
@@ -339,7 +333,7 @@
 
             <OpcodeCard
                 instruction="ld a, (de)"
-                opcode="0A"
+                opcode="1A"
                 cycles="2"
                 :size="1"
                 verbal-mnemonic="Load"
@@ -350,7 +344,7 @@
 
             <OpcodeCard
                 instruction="dec de"
-                opcode="0B"
+                opcode="1B"
                 cycles="1"
                 :size="1"
                 verbal-mnemonic="Decrement"
@@ -360,14 +354,13 @@
 
             <OpcodeCard
                 instruction="inc e"
-                opcode="0C"
+                opcode="1C"
                 cycles="1"
                 :size="1"
                 flag-sign="as defined"
                 flag-zero="as defined"
                 flag-half-carry="as defined"
                 flag-parity-overflow="overflow"
-                flag-add-sub="unaffected"
                 verbal-mnemonic="Increment"
             >
                 Increments register <code>e</code>.
@@ -375,14 +368,13 @@
 
             <OpcodeCard
                 instruction="dec e"
-                opcode="0D"
+                opcode="1D"
                 cycles="1"
                 :size="1"
                 flag-sign="as defined"
                 flag-zero="as defined"
                 flag-half-carry="as defined"
                 flag-parity-overflow="overflow"
-                flag-add-sub="unaffected"
                 verbal-mnemonic="Decrement"
             >
                 Decrements register <code>e</code>.
@@ -390,7 +382,7 @@
 
             <OpcodeCard
                 instruction="ld e, n"
-                opcode="0E n"
+                opcode="1E n"
                 cycles="2"
                 :size="2"
                 verbal-mnemonic="Load"
@@ -413,8 +405,203 @@
             </OpcodeCard>
         </OpcodeTableRow>
 
-        <OpcodeTableRow v-for="row in 14" :header-name="(row + 1).toString(16).toUpperCase()">
-            <OpcodeCard v-for="column in 16" :opcode="(((row + 1) << 4) | column - 1).toString(16)" />
+        <OpcodeTableRow header-name="2">
+            <OpcodeCard
+                instruction="jr nz, d"
+                opcode="20"
+                cycles="2/3"
+                :size="2"
+                verbal-mnemonic="Jump Relative"
+            >
+                Adds the 8-bit signed displacement <code>d</code> to register <code>pc</code> if the zero flag is
+                set low. The displacement is measured from the next opcode.
+            </OpcodeCard>
+
+            <OpcodeCard
+                instruction="ld hl, Mmn"
+                opcode="21 n m M"
+                cycles="3"
+                :adl-cycles="4"
+                :size="3"
+                :adl-size="4"
+                verbal-mnemonic="Load"
+            >
+                Loads the 24-bit value <code>Mmn</code> into register <code>hl</code>.
+            </OpcodeCard>
+
+            <OpcodeCard
+                instruction="ld (hl), a"
+                opcode="22"
+                :size="1"
+                cycles="2"
+                verbal-mnemonic="Load"
+            >
+                Loads the 8-bit value in register <code>a</code> into the memory position
+                pointed to by register <code>hl</code>.
+            </OpcodeCard>
+
+            <OpcodeCard
+                instruction="inc hl"
+                opcode="23"
+                cycles="1"
+                :size="1"
+                verbal-mnemonic="Increment"
+            >
+                Increments register <code>hl</code>.
+            </OpcodeCard>
+
+            <OpcodeCard
+                instruction="inc h"
+                opcode="24"
+                cycles="1"
+                :size="1"
+                flag-sign="as defined"
+                flag-zero="as defined"
+                flag-half-carry="as defined"
+                flag-parity-overflow="overflow"
+                verbal-mnemonic="Increment"
+            >
+                Increments register <code>h</code>.
+            </OpcodeCard>
+
+            <OpcodeCard
+                instruction="dec h"
+                opcode="25"
+                cycles="1"
+                :size="1"
+                flag-sign="as defined"
+                flag-zero="as defined"
+                flag-half-carry="as defined"
+                flag-parity-overflow="as defined"
+                verbal-mnemonic="Decrement"
+            >
+                Decrement register <code>h</code>.
+            </OpcodeCard>
+
+            <OpcodeCard
+                instruction="ld h, n"
+                opcode="26 n"
+                cycles="2"
+                :size="2"
+                verbal-mnemonic="Load"
+            >
+                Loads the 8-bit value <code>n</code> into register <code>h</code>.
+            </OpcodeCard>
+
+            <OpcodeCard
+                instruction="daa"
+                opcode="27"
+                cycles="1"
+                :size="2"
+                flag-sign="as defined"
+                flag-zero="as defined"
+                flag-half-carry="as defined"
+                flag-parity-overflow="as defined"
+                flag-carry="as defined"
+                verbal-mnemonic="Decimal Adjust Accumulator"
+            >
+                Adjusts register <code>a</code> after doing BCD arithmetic.
+            </OpcodeCard>
+
+            <OpcodeCard
+                instruction="jr z, d"
+                opcode="28"
+                cycles="2/3"
+                :size="2"
+                verbal-mnemonic="Jump Relative"
+            >
+                Adds the 8-bit signed displacement <code>d</code> to register <code>pc</code> if the zero flag is
+                set high. The displacement is measured from the next opcode.
+            </OpcodeCard>
+
+            <OpcodeCard
+                instruction="add hl, hl"
+                opcode="29"
+                cycles="1"
+                :size="1"
+                flag-half-carry="as defined"
+                flag-add-sub="reset"
+                flag-carry="as defined"
+                verbal-mnemonic="Add"
+            >
+                Calculates the sum of register <code>hl</code> and <code>hl</code>; the sum is put into
+                register <code>hl</code>.
+            </OpcodeCard>
+
+            <OpcodeCard
+                instruction="ld a, (hl)"
+                opcode="2A"
+                cycles="2"
+                :size="1"
+                verbal-mnemonic="Load"
+            >
+                Loads the 8-bit value in the memory position pointed to by register <code>hl</code>
+                into register <code>a</code>.
+            </OpcodeCard>
+
+            <OpcodeCard
+                instruction="dec hl"
+                opcode="2B"
+                cycles="1"
+                :size="1"
+                verbal-mnemonic="Decrement"
+            >
+                Decrements register <code>hl</code>.
+            </OpcodeCard>
+
+            <OpcodeCard
+                instruction="inc l"
+                opcode="2C"
+                cycles="1"
+                :size="1"
+                flag-sign="as defined"
+                flag-zero="as defined"
+                flag-half-carry="as defined"
+                flag-parity-overflow="overflow"
+                verbal-mnemonic="Increment"
+            >
+                Increments register <code>l</code>.
+            </OpcodeCard>
+
+            <OpcodeCard
+                instruction="dec l"
+                opcode="2D"
+                cycles="1"
+                :size="1"
+                flag-sign="as defined"
+                flag-zero="as defined"
+                flag-half-carry="as defined"
+                flag-parity-overflow="overflow"
+                verbal-mnemonic="Decrement"
+            >
+                Decrements register <code>l</code>.
+            </OpcodeCard>
+
+            <OpcodeCard
+                instruction="ld l, n"
+                opcode="2E n"
+                cycles="2"
+                :size="2"
+                verbal-mnemonic="Load"
+            >
+                Loads the 8-bit value <code>n</code> into register <code>l</code>.
+            </OpcodeCard>
+
+            <OpcodeCard
+                instruction="cpl"
+                opcode="2F"
+                cycles="1"
+                :size="1"
+                flag-half-carry="set"
+                flag-add-sub="set"
+                verbal-mnemonic="Complement Accumulator"
+            >
+                Inverts all bits in register <code>a</code> (one's complement).
+            </OpcodeCard>
+        </OpcodeTableRow>
+
+        <OpcodeTableRow v-for="row in 15" :header-name="(row + 2).toString(16).toUpperCase()">
+            <OpcodeCard v-for="column in 16" :opcode="(((row + 2) << 4) | column - 1).toString(16)" />
         </OpcodeTableRow>
     </OpcodeTable>
 </template>
