@@ -13,7 +13,7 @@
             default: true,
         },
         cycles: {
-            type: Number,
+            type: String,
             required: true,
         },
         size: {
