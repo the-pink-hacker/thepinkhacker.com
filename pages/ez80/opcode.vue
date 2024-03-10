@@ -1,8 +1,10 @@
-<template>
-    <Head>
-        <title>EZ80 Opcode Table</title>
-    </Head>
+<script lang="ts" setup>
+    useHead({
+        title: "EZ80 Opcode Table"
+    });
+</script>
 
+<template>
     <h1>EZ80 Opcode Table</h1>
 
     <OpcodeTable caption="Main Instructions">
