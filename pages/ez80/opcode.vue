@@ -1,4 +1,11 @@
 <script lang="ts" setup>
+    enum FlagModification {
+        Unaffected = "unaffected",
+        AsDefined = "as defined",
+        Set = "set",
+        Reset = "reset",
+    };
+
     useHead({
         title: "EZ80 Opcode Table"
     });
@@ -57,10 +64,10 @@
                 opcode="04"
                 cycles="1"
                 :size="1"
-                flag-sign="as defined"
-                flag-zero="as defined"
-                flag-half-carry="as defined"
-                flag-parity-overflow="overflow"
+                :flag-sign="FlagModification.AsDefined"
+                :flag-zero="FlagModification.AsDefined"
+                :flag-half-carry="FlagModification.AsDefined"
+                :flag-parity-overflow="FlagModification.AsDefined"
                 verbal-mnemonic="Increment"
             >
                 Increments register <code>b</code>.
@@ -71,10 +78,10 @@
                 opcode="05"
                 cycles="1"
                 :size="1"
-                flag-sign="as defined"
-                flag-zero="as defined"
-                flag-half-carry="as defined"
-                flag-parity-overflow="as defined"
+                :flag-sign="FlagModification.AsDefined"
+                :flag-zero="FlagModification.AsDefined"
+                :flag-half-carry="FlagModification.AsDefined"
+                :flag-parity-overflow="FlagModification.AsDefined"
                 verbal-mnemonic="Decrement"
             >
                 Decrement register <code>b</code>.
@@ -95,13 +102,13 @@
                 opcode="07"
                 cycles="1"
                 :size="1"
-                flag-half-carry="reset"
-                flag-add-sub="reset"
-                flag-carry="as defined"
+                :flag-half-carry="FlagModification.Reset"
+                :flag-add-sub="FlagModification.Reset"
+                :flag-carry="FlagModification.AsDefined"
                 verbal-mnemonic="Rotate Left Carry Accumulator"
             >
                 Register <code>a</code> is rotated left by one bit; bit <code>7</code>
-                is copied into the carry flag and bit <code>0</code>.
+                is copied into the carry :flag and bit <code>0</code>.
             </OpcodeCard>
 
             <OpcodeCard
@@ -109,12 +116,12 @@
                 opcode="08"
                 cycles="1"
                 :size="1"
-                flag-sign="as defined"
-                flag-zero="as defined"
-                flag-half-carry="as defined"
-                flag-parity-overflow="as defined"
-                flag-add-sub="as defined"
-                flag-carry="as defined"
+                :flag-sign="FlagModification.AsDefined"
+                :flag-zero="FlagModification.AsDefined"
+                :flag-half-carry="FlagModification.AsDefined"
+                :flag-parity-overflow="FlagModification.AsDefined"
+                :flag-add-sub="FlagModification.AsDefined"
+                :flag-carry="FlagModification.AsDefined"
                 verbal-mnemonic="Exchange"
             >
                 Register <code>af</code> is swapped with it's shadow counterpart <code>af'</code>.
@@ -125,9 +132,9 @@
                 opcode="09"
                 cycles="1"
                 :size="1"
-                flag-half-carry="as defined"
-                flag-add-sub="reset"
-                flag-carry="as defined"
+                :flag-half-carry="FlagModification.AsDefined"
+                :flag-add-sub="FlagModification.Reset"
+                :flag-carry="FlagModification.AsDefined"
                 verbal-mnemonic="Add"
             >
                 Calculates the sum of register <code>hl</code> and <code>bc</code>; the sum is put into
@@ -160,10 +167,10 @@
                 opcode="0C"
                 cycles="1"
                 :size="1"
-                flag-sign="as defined"
-                flag-zero="as defined"
-                flag-half-carry="as defined"
-                flag-parity-overflow="overflow"
+                :flag-sign="FlagModification.AsDefined"
+                :flag-zero="FlagModification.AsDefined"
+                :flag-half-carry="FlagModification.AsDefined"
+                :flag-parity-overflow="FlagModification.AsDefined"
                 verbal-mnemonic="Increment"
             >
                 Increments register <code>c</code>.
@@ -174,10 +181,10 @@
                 opcode="0D"
                 cycles="1"
                 :size="1"
-                flag-sign="as defined"
-                flag-zero="as defined"
-                flag-half-carry="as defined"
-                flag-parity-overflow="overflow"
+                :flag-sign="FlagModification.AsDefined"
+                :flag-zero="FlagModification.AsDefined"
+                :flag-half-carry="FlagModification.AsDefined"
+                :flag-parity-overflow="FlagModification.AsDefined"
                 verbal-mnemonic="Decrement"
             >
                 Decrements register <code>c</code>.
@@ -198,13 +205,13 @@
                 opcode="0F"
                 cycles="1"
                 :size="1"
-                flag-half-carry="reset"
-                flag-add-sub="reset"
-                flag-carry="as defined"
+                :flag-half-carry="FlagModification.Reset"
+                :flag-add-sub="FlagModification.Reset"
+                :flag-carry="FlagModification.AsDefined"
                 verbal-mnemonic="Rotate Right Carry Accumulator"
             >
                 Register <code>a</code> is rotated right by one bit; bit <code>7</code>
-                is copied into the carry flag and bit <code>0</code>.
+                is copied into the carry :flag and bit <code>0</code>.
             </OpcodeCard>
         </OpcodeTableRow>
 
@@ -259,10 +266,10 @@
                 opcode="14"
                 cycles="1"
                 :size="1"
-                flag-sign="as defined"
-                flag-zero="as defined"
-                flag-half-carry="as defined"
-                flag-parity-overflow="overflow"
+                :flag-sign="FlagModification.AsDefined"
+                :flag-zero="FlagModification.AsDefined"
+                :flag-half-carry="FlagModification.AsDefined"
+                :flag-parity-overflow="FlagModification.AsDefined"
                 verbal-mnemonic="Increment"
             >
                 Increments register <code>d</code>.
@@ -273,10 +280,10 @@
                 opcode="15"
                 cycles="1"
                 :size="1"
-                flag-sign="as defined"
-                flag-zero="as defined"
-                flag-half-carry="as defined"
-                flag-parity-overflow="as defined"
+                :flag-sign="FlagModification.AsDefined"
+                :flag-zero="FlagModification.AsDefined"
+                :flag-half-carry="FlagModification.AsDefined"
+                :flag-parity-overflow="FlagModification.AsDefined"
                 verbal-mnemonic="Decrement"
             >
                 Decrement register <code>d</code>.
@@ -298,12 +305,12 @@
                 cycles="1"
                 :size="1"
                 verbal-mnemonic="Rotate Left Accumulator"
-                flag-half-carry="reset"
-                flag-add-sub="reset"
-                flag-carry="as defined"
+                :flag-half-carry="FlagModification.Reset"
+                :flag-add-sub="FlagModification.Reset"
+                :flag-carry="FlagModification.AsDefined"
             >
-                Rotates register <code>a</code> and the carry flag left. Bit <code>7</code> is copied into
-                the carry flag; the carry flag is copied into bit <code>0</code>.
+                Rotates register <code>a</code> and the carry :flag left. Bit <code>7</code> is copied into
+                the carry :flag; the carry :flag is copied into bit <code>0</code>.
             </OpcodeCard>
 
             <OpcodeCard
@@ -322,9 +329,9 @@
                 opcode="19"
                 cycles="1"
                 :size="1"
-                flag-half-carry="as defined"
-                flag-add-sub="reset"
-                flag-carry="as defined"
+                :flag-half-carry="FlagModification.AsDefined"
+                :flag-add-sub="FlagModification.Reset"
+                :flag-carry="FlagModification.AsDefined"
                 verbal-mnemonic="Add"
             >
                 Calculates the sum of register <code>hl</code> and <code>de</code>; the sum is put into
@@ -357,10 +364,10 @@
                 opcode="1C"
                 cycles="1"
                 :size="1"
-                flag-sign="as defined"
-                flag-zero="as defined"
-                flag-half-carry="as defined"
-                flag-parity-overflow="overflow"
+                :flag-sign="FlagModification.AsDefined"
+                :flag-zero="FlagModification.AsDefined"
+                :flag-half-carry="FlagModification.AsDefined"
+                :flag-parity-overflow="FlagModification.AsDefined"
                 verbal-mnemonic="Increment"
             >
                 Increments register <code>e</code>.
@@ -371,10 +378,10 @@
                 opcode="1D"
                 cycles="1"
                 :size="1"
-                flag-sign="as defined"
-                flag-zero="as defined"
-                flag-half-carry="as defined"
-                flag-parity-overflow="overflow"
+                :flag-sign="FlagModification.AsDefined"
+                :flag-zero="FlagModification.AsDefined"
+                :flag-half-carry="FlagModification.AsDefined"
+                :flag-parity-overflow="FlagModification.AsDefined"
                 verbal-mnemonic="Decrement"
             >
                 Decrements register <code>e</code>.
@@ -396,12 +403,12 @@
                 cycles="1"
                 :size="1"
                 verbal-mnemonic="Rotate Right Accumulator"
-                flag-half-carry="reset"
-                flag-add-sub="reset"
-                flag-carry="as defined"
+                :flag-half-carry="FlagModification.Reset"
+                :flag-add-sub="FlagModification.Reset"
+                :flag-carry="FlagModification.AsDefined"
             >
-                Rotates register <code>a</code> and the carry flag right. Bit <code>0</code> is copied into
-                the carry flag; the carry flag is copied into bit <code>7</code>.
+                Rotates register <code>a</code> and the carry :flag right. Bit <code>0</code> is copied into
+                the carry :flag; the carry :flag is copied into bit <code>7</code>.
             </OpcodeCard>
         </OpcodeTableRow>
 
@@ -413,7 +420,7 @@
                 :size="2"
                 verbal-mnemonic="Jump Relative"
             >
-                Adds the 8-bit signed displacement <code>d</code> to register <code>pc</code> if the zero flag is
+                Adds the 8-bit signed displacement <code>d</code> to register <code>pc</code> if the zero :flag is
                 set low. The displacement is measured from the next opcode.
             </OpcodeCard>
 
@@ -455,10 +462,10 @@
                 opcode="24"
                 cycles="1"
                 :size="1"
-                flag-sign="as defined"
-                flag-zero="as defined"
-                flag-half-carry="as defined"
-                flag-parity-overflow="overflow"
+                :flag-sign="FlagModification.AsDefined"
+                :flag-zero="FlagModification.AsDefined"
+                :flag-half-carry="FlagModification.AsDefined"
+                :flag-parity-overflow="FlagModification.AsDefined"
                 verbal-mnemonic="Increment"
             >
                 Increments register <code>h</code>.
@@ -469,10 +476,10 @@
                 opcode="25"
                 cycles="1"
                 :size="1"
-                flag-sign="as defined"
-                flag-zero="as defined"
-                flag-half-carry="as defined"
-                flag-parity-overflow="as defined"
+                :flag-sign="FlagModification.AsDefined"
+                :flag-zero="FlagModification.AsDefined"
+                :flag-half-carry="FlagModification.AsDefined"
+                :flag-parity-overflow="FlagModification.AsDefined"
                 verbal-mnemonic="Decrement"
             >
                 Decrement register <code>h</code>.
@@ -493,11 +500,11 @@
                 opcode="27"
                 cycles="1"
                 :size="2"
-                flag-sign="as defined"
-                flag-zero="as defined"
-                flag-half-carry="as defined"
-                flag-parity-overflow="as defined"
-                flag-carry="as defined"
+                :flag-sign="FlagModification.AsDefined"
+                :flag-zero="FlagModification.AsDefined"
+                :flag-half-carry="FlagModification.AsDefined"
+                :flag-parity-overflow="FlagModification.AsDefined"
+                :flag-carry="FlagModification.AsDefined"
                 verbal-mnemonic="Decimal Adjust Accumulator"
             >
                 Adjusts register <code>a</code> after doing BCD arithmetic.
@@ -510,7 +517,7 @@
                 :size="2"
                 verbal-mnemonic="Jump Relative"
             >
-                Adds the 8-bit signed displacement <code>d</code> to register <code>pc</code> if the zero flag is
+                Adds the 8-bit signed displacement <code>d</code> to register <code>pc</code> if the zero :flag is
                 set high. The displacement is measured from the next opcode.
             </OpcodeCard>
 
@@ -519,9 +526,9 @@
                 opcode="29"
                 cycles="1"
                 :size="1"
-                flag-half-carry="as defined"
-                flag-add-sub="reset"
-                flag-carry="as defined"
+                :flag-half-carry="FlagModification.AsDefined"
+                :flag-add-sub="FlagModification.Reset"
+                :flag-carry="FlagModification.AsDefined"
                 verbal-mnemonic="Add"
             >
                 Calculates the sum of register <code>hl</code> and <code>hl</code>; the sum is put into
@@ -554,10 +561,10 @@
                 opcode="2C"
                 cycles="1"
                 :size="1"
-                flag-sign="as defined"
-                flag-zero="as defined"
-                flag-half-carry="as defined"
-                flag-parity-overflow="overflow"
+                :flag-sign="FlagModification.AsDefined"
+                :flag-zero="FlagModification.AsDefined"
+                :flag-half-carry="FlagModification.AsDefined"
+                :flag-parity-overflow="FlagModification.AsDefined"
                 verbal-mnemonic="Increment"
             >
                 Increments register <code>l</code>.
@@ -568,10 +575,10 @@
                 opcode="2D"
                 cycles="1"
                 :size="1"
-                flag-sign="as defined"
-                flag-zero="as defined"
-                flag-half-carry="as defined"
-                flag-parity-overflow="overflow"
+                :flag-sign="FlagModification.AsDefined"
+                :flag-zero="FlagModification.AsDefined"
+                :flag-half-carry="FlagModification.AsDefined"
+                :flag-parity-overflow="FlagModification.AsDefined"
                 verbal-mnemonic="Decrement"
             >
                 Decrements register <code>l</code>.
@@ -592,8 +599,8 @@
                 opcode="2F"
                 cycles="1"
                 :size="1"
-                flag-half-carry="set"
-                flag-add-sub="set"
+                :flag-half-carry="FlagModification.Set"
+                :flag-add-sub="FlagModification.Set"
                 verbal-mnemonic="Complement Accumulator"
             >
                 Inverts all bits in register <code>a</code> (one's complement).
@@ -601,7 +608,7 @@
         </OpcodeTableRow>
 
         <OpcodeTableRow v-for="row in 15" :header-name="(row + 2).toString(16).toUpperCase()">
-            <OpcodeCard v-for="column in 16" :opcode="(((row + 2) << 4) | column - 1).toString(16)" />
+            <OpcodeTableCell v-for="column in 16" :opcode="(((row + 2) << 4) | column - 1).toString(16)" />
         </OpcodeTableRow>
     </OpcodeTable>
 </template>

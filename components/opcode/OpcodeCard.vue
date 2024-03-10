@@ -56,7 +56,7 @@
 </script>
 
 <template>
-    <td>
+    <OpcodeTableCell>
         <code>{{ instruction }}</code>
         <div>
             <dl>
@@ -67,7 +67,7 @@
 
                 <div>
                     <dt>Bytes:</dt>
-                    <dd><code>{{ adlSize ? adlSize : size }}</code></dd>
+                    <dd><code>{{ adlSize ?? size }}</code></dd>
                 </div>
 
                 <div>
@@ -116,17 +116,11 @@
             <p v-if="verbalMnemonic">{{ verbalMnemonic }}</p>
             <p><slot /></p>
         </div>
-    </td>
+    </OpcodeTableCell>
 </template>
 
 <style lang="scss" scoped>
     td {
-        text-align: center;
-        position: relative;
-        border: 2px solid var(--accent-color);
-        background-color: var(--background-color);
-        padding: 8px;
-
         & > div {
             padding: 8px;
             text-align: initial;

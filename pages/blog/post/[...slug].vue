@@ -6,6 +6,10 @@ const { data: surrounding } = await useAsyncData(`content-${path}`, () => {
         .only("_path")
         .findSurround(path);
 });
+
+function titleToId(title: string) {
+    return title.toLowerCase().replaceAll(" ", "-");
+}
 </script>
 
 <!--TODO: Add minimize button for table of contents-->
@@ -17,12 +21,18 @@ const { data: surrounding } = await useAsyncData(`content-${path}`, () => {
                     <header>
                         <h1>Table of Contents</h1>
                     </header>
-                    <TableOfContentsItem id="" :depth="1" :text="title" :children="toc.links" />
+                    <TableOfContentsItem
+                        id=""
+                        :depth="1"
+                        :text="title"
+                        :children="toc.links"
+                        :content-top="titleToId(title)"
+                    />
                 </section>
                 <hr />
             </aside>
             <section>
-                <ContentRenderer id="content-top" :value="doc" />
+                <ContentRenderer :value="doc" />
             </section>
             <hr />
             <section v-if="surrounding" class="bottom-article-links">
