@@ -1,10 +1,10 @@
 <script lang="ts" setup>
-    defineProps({
-        headerName: {
-            type: String,
-            required: true,
-        },
-    });
+defineProps({
+    headerName: {
+        type: String,
+        required: true,
+    },
+});
 </script>
 
 <template>

@@ -1,10 +1,10 @@
 <script lang="ts" setup>
-    defineProps({
-        caption: {
-            type: String,
-            required: true,
-        },
-    });
+defineProps({
+    caption: {
+        type: String,
+        required: true,
+    },
+});
 </script>
 
 <template>

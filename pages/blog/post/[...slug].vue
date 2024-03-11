@@ -21,13 +21,8 @@ function titleToId(title: string) {
                     <header>
                         <h1>Table of Contents</h1>
                     </header>
-                    <TableOfContentsItem
-                        id=""
-                        :depth="1"
-                        :text="title"
-                        :children="toc.links"
-                        :content-top="titleToId(title)"
-                    />
+                    <TableOfContentsItem id="" :depth="1" :text="title" :children="toc.links"
+                        :content-top="titleToId(title)" />
                 </section>
                 <hr />
             </aside>

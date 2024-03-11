@@ -1,17 +1,19 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  devtools: { enabled: true },
+  devtools: {
+    enabled: true
+  },
   css: [
-    "~/assets/style/main.scss"
+    "~/assets/style/main.scss",
   ],
   modules: [
-    "@nuxt/content"
+    "@nuxt/content",
   ],
   content: {
     highlight: {
       theme: "github-dark",
       preload: [
-        "rust"
+        "rust",
       ],
     },
   },

@@ -1,58 +1,58 @@
 <script lang="ts" setup>
-    defineProps({
-        instruction: {
-            type: String,
-            required: true,
-        },
-        opcode: {
-            type: String,
-            required: true,
-        },
-        tiSupported: {
-            type: Boolean,
-            default: true,
-        },
-        cycles: {
-            type: String,
-            required: true,
-        },
-        size: {
-            type: Number,
-            required: true,
-        },
-        adlSize: {
-            type: Number,
-            required: false,
-        },
-        verbalMnemonic: {
-            type: String,
-            required: false,
-        },
-        flagCarry: {
-            type: String,
-            default: "unaffected",
-        },
-        flagAddSub: {
-            type: String,
-            default: "unaffected",
-        },
-        flagParityOverflow: {
-            type: String,
-            default: "unaffected",
-        },
-        flagHalfCarry: {
-            type: String,
-            default: "unaffected",
-        },
-        flagZero: {
-            type: String,
-            default: "unaffected",
-        },
-        flagSign: {
-            type: String,
-            default: "unaffected",
-        },
-    });
+defineProps({
+    instruction: {
+        type: String,
+        required: true,
+    },
+    opcode: {
+        type: String,
+        required: true,
+    },
+    tiSupported: {
+        type: Boolean,
+        default: true,
+    },
+    cycles: {
+        type: String,
+        required: true,
+    },
+    size: {
+        type: Number,
+        required: true,
+    },
+    adlSize: {
+        type: Number,
+        required: false,
+    },
+    verbalMnemonic: {
+        type: String,
+        required: false,
+    },
+    flagCarry: {
+        type: String,
+        default: "unaffected",
+    },
+    flagAddSub: {
+        type: String,
+        default: "unaffected",
+    },
+    flagParityOverflow: {
+        type: String,
+        default: "unaffected",
+    },
+    flagHalfCarry: {
+        type: String,
+        default: "unaffected",
+    },
+    flagZero: {
+        type: String,
+        default: "unaffected",
+    },
+    flagSign: {
+        type: String,
+        default: "unaffected",
+    },
+});
 </script>
 
 <template>
@@ -114,37 +114,39 @@
             <hr />
 
             <p v-if="verbalMnemonic">{{ verbalMnemonic }}</p>
-            <p><slot /></p>
+            <p>
+                <slot />
+            </p>
         </div>
     </OpcodeTableCell>
 </template>
 
 <style lang="scss" scoped>
-    td {
-        & > div {
-            padding: 8px;
-            text-align: initial;
-            position: absolute;
-            display: none;
-            background-color: black;
-            width: 300px;
-            z-index: 1;
-        }
-
-        &:hover {
-            & > div {
-                display: block;
-            }
-        }
+td {
+    &>div {
+        padding: 8px;
+        text-align: initial;
+        position: absolute;
+        display: none;
+        background-color: black;
+        width: 300px;
+        z-index: 1;
     }
 
-    dl {
-        margin: 0;
-        width: 100%;
-
-        & > div {
-            display: flex;
-            justify-content: space-between;
+    &:hover {
+        &>div {
+            display: block;
         }
     }
+}
+
+dl {
+    margin: 0;
+    width: 100%;
+
+    &>div {
+        display: flex;
+        justify-content: space-between;
+    }
+}
 </style>
