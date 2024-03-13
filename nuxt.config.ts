@@ -14,6 +14,8 @@ export default defineNuxtConfig({
       theme: "github-dark",
       preload: [
         "rust",
+        "toml",
+        "asm",
       ],
     },
   },

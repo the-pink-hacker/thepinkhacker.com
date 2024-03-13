@@ -15,31 +15,33 @@ function titleToId(title: string) {
 <!--TODO: Add minimize button for table of contents-->
 <template>
     <DocumentContainer>
-        <ContentDoc v-slot="{ doc, doc: { title, description, body: { toc } } }">
-            <aside>
-                <section class="table-of-contents">
-                    <header>
-                        <h1>Table of Contents</h1>
-                    </header>
-                    <TableOfContentsItem id="" :depth="1" :text="title" :children="toc.links"
-                        :content-top="titleToId(title)" />
+        <article>
+            <ContentDoc v-slot="{ doc, doc: { title, description, body: { toc } } }">
+                <aside>
+                    <section class="table-of-contents">
+                        <header>
+                            <h1>Table of Contents</h1>
+                        </header>
+                        <TableOfContentsItem id="" :depth="1" :text="title" :children="toc.links"
+                            :content-top="titleToId(title)" />
+                    </section>
+                    <hr />
+                </aside>
+                <section>
+                    <ContentRenderer :value="doc" />
                 </section>
                 <hr />
-            </aside>
-            <section>
-                <ContentRenderer :value="doc" />
-            </section>
-            <hr />
-            <section v-if="surrounding" class="bottom-article-links">
-                <a :href="surrounding[0]?._path">Previous</a>
-                <a :href="surrounding[1]?._path">Next</a>
-            </section>
+                <section v-if="surrounding" class="bottom-article-links">
+                    <a v-if="surrounding[0]" :href="surrounding[0]._path">Previous</a>
+                    <a v-if="surrounding[1]" :href="surrounding[1]._path">Next</a>
+                </section>
 
-            <Head>
-                <Meta property="og:title" :content="title" />
-                <Meta property="og:description" :content="description" />
-            </Head>
-        </ContentDoc>
+                <Head>
+                    <Meta property="og:title" :content="title" />
+                    <Meta property="og:description" :content="description" />
+                </Head>
+            </ContentDoc>
+        </article>
     </DocumentContainer>
 </template>
 
