@@ -86,7 +86,7 @@ pre {
         padding: 0;
         background: none;
         border: none;
-        margin: 16px;
+        margin: 8px;
         transition: color var(--hover-time);
         --shake-amount: 15deg;
 
@@ -95,7 +95,7 @@ pre {
         }
 
         &.copied {
-            animation: 100ms ease shake 2;
+            animation: 200ms ease shake 2;
         }
     }
 }
