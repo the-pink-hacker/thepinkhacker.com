@@ -9,10 +9,10 @@
     position: relative;
     display: flex;
     width: 100%;
-    height: 300px;
+    height: 25rem;
     margin: 8px 0;
     overflow: scroll hidden;
-    gap: 8px;
+    gap: 0.5rem;
     background-color: var(--background-accent-color);
     z-index: 0;
 }

@@ -124,7 +124,7 @@ defineProps({
 <style lang="scss" scoped>
 td {
     &>div {
-        padding: 8px;
+        padding: 0.5rem;
         text-align: initial;
         position: absolute;
         display: none;

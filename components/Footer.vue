@@ -1,6 +1,6 @@
 <template>
   <footer>
-    <p>Created by: Ryan Garrett (ThePinkHacker)</p>
+    <p>Created by: Pink (ThePinkHacker)</p>
     <p>Contact me at: <a href="mailto:pink@thepinkhacker.com">pink@thepinkhacker.com</a></p>
     <p>Hosted on: <a href="https://firebase.google.com/">Firebase</a></p>
     <p>Source code hosted on: <a href="https://github.thepinkhacker.com/thepinkhacker.com">GitHub</a></p>

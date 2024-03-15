@@ -26,9 +26,15 @@ defineProps({
     },
 });
 
-const copied = ref<string | null>(null);
+const copied = ref<boolean>(false);
 
-function copyCode(event: MouseEvent) {
+async function copyCode(event: MouseEvent | KeyboardEvent) {
+    if (copied.value) return;
+
+    if (event instanceof KeyboardEvent) {
+        if (event.key != "Enter") return;
+    }
+
     const target = event.target as HTMLElement | null;
     const preElement = target?.parentElement?.parentElement;
     const codeElement = preElement?.querySelector("code");
@@ -36,22 +42,20 @@ function copyCode(event: MouseEvent) {
 
     if (text == null) return;
 
-    navigator.clipboard.writeText(text).then(() => {
-        copied.value = "copied";
-    });
-}
+    await navigator.clipboard.writeText(text);
 
-function removeSelection() {
-    copied.value = null;
+    copied.value = true;
+
+    setTimeout(() => copied.value = false, 750);
 }
 </script>
 
 <template>
     <pre
-        :class="$props.class"><button class="copy-widget" :class="copied"><span class="material-icons" @click="copyCode" @mouseleave="removeSelection">content_copy</span></button><slot /></pre>
+        :class="$props.class"><button class="copy-widget" :class="copied ? 'copied' : ''" @keydown="copyCode"><span class="material-icons" @click="copyCode">content_copy</span></button><slot /></pre>
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
 @keyframes shake {
     0% {
         rotate: 0;
@@ -73,8 +77,13 @@ function removeSelection() {
 pre {
     position: relative;
 
-    code .line {
-        display: block;
+    code {
+        white-space: pre-line;
+
+        .line {
+            font-size: 0.9rem;
+            display: block;
+        }
     }
 
     &>.copy-widget {
@@ -86,12 +95,17 @@ pre {
         padding: 0;
         background: none;
         border: none;
-        margin: 8px;
+        margin: 0.5rem;
         transition: color var(--hover-time);
         --shake-amount: 15deg;
 
-        &:hover {
+        &:hover,
+        &:focus-visible {
             color: var(--link-hover-color);
+        }
+
+        span {
+            font-size: 1.5rem;
         }
 
         &.copied {

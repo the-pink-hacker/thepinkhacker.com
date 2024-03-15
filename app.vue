@@ -17,7 +17,13 @@ useHead({
       rel: "stylesheet",
       href: "https://fonts.googleapis.com/icon?family=Material+Icons",
     }
-  ]
+  ],
+  meta: [
+    {
+      name: "viewport",
+      content: "width=device-width; user-scalable=yes",
+    },
+  ],
 });
 </script>
 

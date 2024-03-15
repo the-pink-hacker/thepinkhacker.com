@@ -52,7 +52,7 @@ function resetHover() {
     position: relative;
     display: flex;
     flex: 0 0 auto;
-    width: 300px;
+    width: 25rem;
     height: 100%;
     user-select: none;
     overflow: hidden;
@@ -92,7 +92,7 @@ function resetHover() {
     width: 33%;
     min-height: fit-content;
     min-width: fit-content;
-    padding: 8px;
+    padding: 0.5rem;
 }
 
 .carousel-image-title {
