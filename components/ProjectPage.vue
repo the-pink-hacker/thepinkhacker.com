@@ -30,7 +30,7 @@
             </SideCardContainer>
 
             <Head>
-                <Meta name="og:image" :content="logo" />
+                <Meta property="og:image" :content="logo" />
             </Head>
         </ContentDoc>
     </DocumentContainer>

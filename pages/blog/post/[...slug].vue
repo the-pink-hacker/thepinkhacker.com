@@ -34,11 +34,7 @@ function titleToId(title: string) {
                 </section>
 
                 <Head>
-                    <Title>{{ title }}</Title>
-                    <Meta name="description" :content="description" />
-                    <Meta name="og:title" :content="title" />
-                    <Meta name="og:description" :content="description" />
-                    <Meta name="og:image" :content="logo" />
+                    <Meta property="og:image" :content="logo" />
                 </Head>
             </ContentDoc>
         </article>
