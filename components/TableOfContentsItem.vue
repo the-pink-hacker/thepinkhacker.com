@@ -24,3 +24,11 @@ function parseId(id: string, contentTop?: string) {
         <TableOfContentsItem :id="child.id" :depth="child.depth" :text="child.text" :children="child.children" />
     </template>
 </template>
+
+<style lang="scss" scoped>
+@for $i from 1 through 6 {
+    h#{7 - $i} {
+        font-size: 0.25rem * $i;
+    }
+}
+</style>

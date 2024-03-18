@@ -11,7 +11,7 @@ useSeoMeta({
 
 <template>
     <div>
-        <p><strong>This website is under heavy construction right now. Check back later.</strong></p>
+        <h2><strong>This website is under heavy construction right now. Check back later.</strong></h2>
         <BorderedButton @click="count++">Counter: {{ count }}</BorderedButton>
         <p>Here is an <NuxtLink to="/">inline link</NuxtLink>
         </p>
@@ -22,11 +22,11 @@ useSeoMeta({
                 Apollo
             </ImageCarouselItem>
             <ImageCarouselItem alt="Classic 3D logo" src="https://cdn.modrinth.com/data/FRSckbRo/icon.png"
-                to="/projects/apollo">
+                to="/projects/classic-3d">
                 Classic 3D
             </ImageCarouselItem>
             <ImageCarouselItem alt="Commands+ logo" src="https://media.forgecdn.net/avatars/569/858/637930634199896245.png"
-                to="/projects/apollo">
+                to="/projects/commands-plus">
                 Commands+
             </ImageCarouselItem>
             <ImageCarouselItem src="https://picsum.photos/seed/dasj/1920/1080">

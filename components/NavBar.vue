@@ -8,6 +8,7 @@
             <DropdownItem to="/projects/apollo">Apollo</DropdownItem>
             <DropdownItem to="/projects/classic-3d">Classic 3D</DropdownItem>
             <DropdownItem to="/projects/commands-plus">Commands+</DropdownItem>
+            <DropdownItem to="/projects/ti-sans-undertale">TI Sans Undertale</DropdownItem>
         </Dropdown>
 
         <Dropdown title="Socials">
