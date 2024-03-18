@@ -18,7 +18,7 @@ useSeoMeta({
         <h2>Projects</h2>
         <ImageCarousel>
             <ImageCarouselItem style="image-rendering: pixelated;" alt="" src="https://i.imgur.com/xoFQ3Aa.png"
-                to="/project/apollo">
+                to="/project/ti-sans-undertale">
                 Apollo
             </ImageCarouselItem>
             <ImageCarouselItem alt="Apollo logo" src="https://media.forgecdn.net/avatars/478/208/637773649648384039.png"
