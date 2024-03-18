@@ -28,13 +28,14 @@ useHead({
 </script>
 
 <template>
-
-  <Head>
-    <Link rel="canonical" :href="'https://thepinkhacker.com' + $route.path" />
-  </Head>
   <NavBar />
   <main>
     <NuxtPage />
   </main>
   <Footer />
+
+  <Head>
+    <Link rel="canonical" :href="'https://thepinkhacker.com' + $route.path" />
+    <Meta name="og:url" :content="'https://thepinkhacker.com' + $route.path" />
+  </Head>
 </template>

@@ -10,17 +10,12 @@ defineProps({
 <template>
     <aside :class="direction">
         <slot />
-        <hr />
     </aside>
 </template>
 
 <style lang="scss">
 aside {
     position: static;
-
-    &>hr:last-child {
-        display: inherit;
-    }
 }
 
 @media screen and (min-width: 75rem) {
@@ -41,12 +36,8 @@ aside {
 
         &>.side-card {
             position: sticky;
-            top: 0;
+            top: 2rem;
             height: fit-content;
-        }
-
-        &>hr:last-child {
-            display: none;
         }
     }
 }

@@ -5,10 +5,10 @@
         </RouterLink>
 
         <Dropdown title="Projects">
-            <DropdownItem to="/projects/apollo">Apollo</DropdownItem>
-            <DropdownItem to="/projects/classic-3d">Classic 3D</DropdownItem>
-            <DropdownItem to="/projects/commands-plus">Commands+</DropdownItem>
-            <DropdownItem to="/projects/ti-sans-undertale">TI Sans Undertale</DropdownItem>
+            <DropdownItem to="/project/apollo">Apollo</DropdownItem>
+            <DropdownItem to="/project/classic-3d">Classic 3D</DropdownItem>
+            <DropdownItem to="/project/commands-plus">Commands+</DropdownItem>
+            <DropdownItem to="/project/ti-sans-undertale">TI Sans Undertale</DropdownItem>
         </Dropdown>
 
         <Dropdown title="Socials">
@@ -37,6 +37,7 @@ nav {
     height: 4rem;
     overflow-x: clip;
     z-index: 1;
+    user-select: none;
 }
 
 .navbar-title {

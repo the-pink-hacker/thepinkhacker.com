@@ -7,3 +7,10 @@ defineProps<{ id?: string }>();
         <slot />
     </ContentHeader>
 </template>
+
+<style lang="scss" scoped>
+h1 {
+    text-align: center;
+    font-size: 1.75rem;
+}
+</style>
