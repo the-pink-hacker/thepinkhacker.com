@@ -19,7 +19,7 @@ useSeoMeta({
         <ImageCarousel>
             <ImageCarouselItem style="image-rendering: pixelated;" alt="" src="https://i.imgur.com/xoFQ3Aa.png"
                 to="/project/ti-sans-undertale">
-                Apollo
+                TI Sans Undertale
             </ImageCarouselItem>
             <ImageCarouselItem alt="Apollo logo" src="https://media.forgecdn.net/avatars/478/208/637773649648384039.png"
                 to="/project/apollo">

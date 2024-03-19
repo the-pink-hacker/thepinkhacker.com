@@ -34,8 +34,8 @@ function resetHover() {
 
 <template>
     <div class="carousel-image-wrapper" @mousemove="hover" @mouseleave="resetHover">
-        <a v-if="isRoute(to)" class="carousel-image-link" :href="to" />
-        <NuxtLink v-else :to="to" class="carousel-image-link" />
+        <NuxtLink v-if="isRoute(to)" class="carousel-image-link" :to="to" />
+        <a v-else :href="to" class="carousel-image-link" />
         <div class="carousel-image-title-wrapper">
             <div class="carousel-image-title">
                 <slot />

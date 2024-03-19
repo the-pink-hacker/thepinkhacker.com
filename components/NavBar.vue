@@ -19,7 +19,7 @@
         </Dropdown>
 
         <BorderedBlock>
-            <NuxtLink to="/blog/overview">Blog</NuxtLink>
+            <NuxtLink to="/blog">Blog</NuxtLink>
         </BorderedBlock>
 
         <Dropdown title="EZ80">

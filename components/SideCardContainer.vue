@@ -34,7 +34,7 @@ aside {
             right: 0;
         }
 
-        &>.side-card {
+        &>* {
             position: sticky;
             top: 2rem;
             height: fit-content;

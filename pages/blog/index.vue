@@ -16,6 +16,6 @@
 <style lang="scss">
 .blog-posts {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(256px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
 }
 </style>

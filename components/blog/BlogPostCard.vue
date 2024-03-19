@@ -49,7 +49,7 @@ function formatPostDate(date: string) {
         </h1>
         <ClientOnly>
             <time v-if="date != null" :datetime="date" :title="formatPostDateLong(date)">{{ formatPostDate(date)
-            }}</time>
+                }}</time>
         </ClientOnly>
         <p>{{ description }}</p>
     </article>
@@ -58,7 +58,7 @@ function formatPostDate(date: string) {
 <style lang="scss">
 .blog-post-card {
     background-color: var(--background-middle-color);
-    padding: 8px;
-    margin: 8px
+    padding: 0.5rem;
+    margin: 0.5rem;
 }
 </style>

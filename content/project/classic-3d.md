@@ -2,6 +2,17 @@
 logo: https://cdn.modrinth.com/data/FRSckbRo/icon.png
 title: Classic 3D
 description: Classic 3D is a resourcepack aimed at adding more detail to the models in Minecraft while preserving the overall look and feel.
+projectLinks:
+  - name: GitHub
+    url: https://github.thepinkhacker.com/classic-3d
+    icon: https://github.githubassets.com/favicons/favicon-dark.svg
+  - name: Modrinth
+    url: https://modrinth.com/resourcepack/classic-3d
+    icon: https://raw.githubusercontent.com/modrinth/labrinth/master/assets/logo.svg
+
+projectVersions:
+  - name: v15.2 - 1.19.3
+    download: https://cdn.modrinth.com/data/FRSckbRo/versions/8LO93Xf4/%C2%A76%C2%A7lClassic%203D%20v15.2%20-%201.19.zip
 ---
 
 Classic 3D is a resource pack that turns the default models into more complex and detailed blocks, while still looking like Minecraft.
@@ -22,8 +33,6 @@ Classic 3D is a resource pack that turns the default models into more complex an
 
 To get news and updates about the Classic 3D, go here:
 
-~~[Classic 3D's Twitter](https://twitter.com/Classic_3D)~~
-
 [Classic 3D's Tumblr](https://classic3d.tumblr.com)
 
 ---
@@ -40,7 +49,7 @@ Some textures by:
 
 Created by:
 
-[Ryan (ThePinkHacker)](https://thepinkhacker.com/)
+[Ryan (ThePinkHacker)](/)
 
 ---
 

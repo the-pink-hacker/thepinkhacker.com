@@ -26,26 +26,25 @@ useHead({
     ],
 });
 
-const scale = ref(1);
+function updateScale() {
+    document.body.style.fontSize = `${devicePixelRatio}rem`;
+}
 
 onMounted(() => {
-    window.visualViewport?.addEventListener("resize", () => {
-        scale.value = devicePixelRatio;
-    });
+    updateScale();
+    window.visualViewport?.addEventListener("resize", updateScale);
 });
 </script>
 
 <template>
-    <div :style="`font-size: ${scale}rem`">
-        <NavBar />
-        <main>
-            <NuxtPage />
-        </main>
-        <Footer />
+    <NavBar />
+    <main>
+        <NuxtPage />
+    </main>
+    <Footer />
 
-        <Head>
-            <Link rel="canonical" :href="'https://thepinkhacker.com' + $route.path" />
-            <Meta property="og:url" :content="'https://thepinkhacker.com' + $route.path" />
-        </Head>
-    </div>
+    <Head>
+        <Link rel=" canonical" :href="'https://thepinkhacker.com' + $route.path" />
+        <Meta property="og:url" :content="'https://thepinkhacker.com' + $route.path" />
+    </Head>
 </template>
