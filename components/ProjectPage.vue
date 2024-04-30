@@ -18,7 +18,7 @@
                     <SideCard>
                         <template #title>Links</template>
 
-                        <ul class="icon-row">
+                        <ul class="icon-row" v-if="projectLinks?.length > 0">
                             <li v-for="{ name, url, icon } in projectLinks">
                                 <a :href="url">
                                     <img :src="icon" :title="name" role="img" />

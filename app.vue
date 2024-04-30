@@ -26,14 +26,14 @@ useHead({
     ],
 });
 
-function updateScale() {
-    document.body.style.fontSize = `${devicePixelRatio}rem`;
-}
+// function updateScale() {
+//     document.body.style.fontSize = `${devicePixelRatio}rem`;
+// }
 
-onMounted(() => {
-    updateScale();
-    window.visualViewport?.addEventListener("resize", updateScale);
-});
+// onMounted(() => {
+//     updateScale();
+//     window.visualViewport?.addEventListener("resize", updateScale);
+// });
 </script>
 
 <template>

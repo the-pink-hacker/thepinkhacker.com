@@ -281,7 +281,7 @@ useHead({
             </OpcodeCard>
         </OpcodeTableRow>
 
-        <OpcodeTableRow v-for="row in 15" :header-name="(row + 2).toString(16).toUpperCase()">
+        <OpcodeTableRow v-for="row in 13" :header-name="(row + 2).toString(16).toUpperCase()">
             <OpcodeTableCell v-for="column in 16" :opcode="(((row + 2) << 4) | column - 1).toString(16)" />
         </OpcodeTableRow>
     </OpcodeTable>
