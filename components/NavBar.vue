@@ -23,7 +23,7 @@ function toggleMenu() {
             <div class="expanded-menu">
                 <RouterLink to="/blog" class="navbar-title">Blog</RouterLink>
                 <RouterLink to="/" class="navbar-title">Projects</RouterLink>
-                <RouterLink to="/" class="navbar-title">Portfolio</RouterLink>
+                <RouterLink to="/ez80/opcode" class="navbar-title">EZ80</RouterLink>
                 <RouterLink to="/" class="navbar-title">About</RouterLink>
             </div>
         </div>
