@@ -2,7 +2,7 @@
 const { path } = useRoute();
 
 const { data: surrounding } = await useAsyncData(`content-${path}`, () => {
-    return queryContent("/blog")
+    return queryContent("/blog/post")
         .only("_path")
         .findSurround(path);
 });
