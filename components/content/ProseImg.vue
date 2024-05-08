@@ -37,3 +37,9 @@ const refinedSrc = computed(() => {
 <template>
     <img :src="refinedSrc" :alt="alt" :title="alt" :width="width" :height="height">
 </template>
+
+<style lang="scss" scoped>
+img {
+    max-height: 50vh;
+}
+</style>

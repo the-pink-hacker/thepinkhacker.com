@@ -12,8 +12,8 @@ defineProps({
 
 <template>
     <a :href="to">
-        <span v-if="fontPack" :title="name" :class="fontPack" role="img">{{ icon }}</span>
-        <img v-else :src="icon" :title="name" role="img" />
+        <span v-if="fontPack" :title="name" :class="fontPack">{{ icon }}</span>
+        <img v-else :src="icon" :title="name" />
     </a>
 </template>
 

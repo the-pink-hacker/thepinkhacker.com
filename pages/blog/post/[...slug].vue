@@ -25,7 +25,7 @@ function titleToId(title: string) {
                     </SideCard>
                 </SideCardContainer>
                 <header>
-                    <ProseH1 :id="titleToId(title)" :render="true">{{ title }}</ProseH1>
+                    <ProseH1 v-if="title" :id="titleToId(title)" :render="true">{{ title }}</ProseH1>
                     <div>
                         <IconRoute to="/blog/rss" icon="rss_feed" font-pack="material-icons" />
                     </div>
@@ -68,7 +68,5 @@ function titleToId(title: string) {
 header {
     display: flex;
     flex-direction: column;
-
-    &>div {}
 }
 </style>
