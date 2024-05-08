@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 defineProps({
     path: {
         type: String,
@@ -14,32 +14,6 @@ defineProps({
     },
     date: String,
 });
-
-const DATE_FORMAT_LONG = new Intl.DateTimeFormat(
-    "en-US",
-    {
-        dateStyle: "long",
-        timeStyle: "long",
-    },
-);
-
-const DATE_FORMAT = new Intl.DateTimeFormat(
-    "en-US",
-    {
-        dateStyle: "long",
-    },
-);
-
-
-function formatPostDateLong(date: string) {
-    let parsedDate = new Date(date);
-    return DATE_FORMAT_LONG.format(parsedDate);
-}
-
-function formatPostDate(date: string) {
-    let parsedDate = new Date(date);
-    return DATE_FORMAT.format(parsedDate);
-}
 </script>
 
 <template>
@@ -47,10 +21,7 @@ function formatPostDate(date: string) {
         <h1>
             <NuxtLink :to="path">{{ title }}</NuxtLink>
         </h1>
-        <ClientOnly>
-            <time v-if="date != null" :datetime="date" :title="formatPostDateLong(date)">{{ formatPostDate(date)
-                }}</time>
-        </ClientOnly>
+        <Timestamp v-if="date" :date="date" />
         <p>{{ description }}</p>
     </article>
 </template>

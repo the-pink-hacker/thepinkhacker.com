@@ -20,9 +20,7 @@
 
                         <ul class="icon-row" v-if="projectLinks?.length > 0">
                             <li v-for="{ name, url, icon } in projectLinks">
-                                <a :href="url">
-                                    <img :src="icon" :title="name" role="img" />
-                                </a>
+                                <IconRoute :to="url" :name="name" :icon="icon" />
                             </li>
                         </ul>
                     </SideCard>
@@ -61,22 +59,5 @@ header>h1 {
     display: flex;
     justify-content: center;
     user-select: none;
-
-    >li {
-        transition: scale var(--hover-time);
-        width: 2rem;
-        aspect-ratio: 1/1;
-        margin-left: 0.5rem;
-        margin-right: 0.5rem;
-
-        img {
-            width: 100%;
-            aspect-ratio: 1/1;
-        }
-
-        &:hover {
-            scale: 1.25;
-        }
-    }
 }
 </style>

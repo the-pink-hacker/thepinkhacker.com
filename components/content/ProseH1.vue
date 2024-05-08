@@ -1,9 +1,9 @@
 <script setup lang="ts">
-defineProps<{ id?: string }>();
+defineProps<{ id?: string, render?: boolean }>();
 </script>
 
 <template>
-    <ContentHeader is="h1" :id="id">
+    <ContentHeader v-if="render" is="h1" :id="id">
         <slot />
     </ContentHeader>
 </template>

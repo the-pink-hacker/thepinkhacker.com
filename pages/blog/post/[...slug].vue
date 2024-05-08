@@ -16,7 +16,7 @@ function titleToId(title: string) {
 <template>
     <DocumentContainer>
         <article>
-            <ContentDoc v-slot="{ doc, doc: { title, description, body: { toc }, logo } }">
+            <ContentDoc v-slot="{ doc, doc: { title, description, body: { toc }, logo, date } }">
                 <SideCardContainer>
                     <SideCard :top-divider="false" :bottom-divider="true">
                         <template #title>Table of Contents</template>
@@ -24,6 +24,16 @@ function titleToId(title: string) {
                             :content-top="titleToId(title)" />
                     </SideCard>
                 </SideCardContainer>
+                <header>
+                    <ProseH1 :id="titleToId(title)" :render="true">{{ title }}</ProseH1>
+                    <div>
+                        <IconRoute to="/blog/rss" icon="rss_feed" font-pack="material-icons" />
+                    </div>
+                    <div v-if="date">Created:
+                        <Timestamp :date="date" />
+                    </div>
+                </header>
+                <hr />
                 <section>
                     <ContentRenderer :value="doc" />
                 </section>
@@ -33,9 +43,8 @@ function titleToId(title: string) {
                     <a v-if="surrounding[1]" :href="surrounding[1]._path" class="next">Next</a>
                 </section>
 
-                <Head>
-                    <Meta property="og:image" :content="logo" />
-                </Head>
+                <Meta property="og:image" :content="logo" />
+                <Meta property="og:description" :content="description" />
             </ContentDoc>
         </article>
     </DocumentContainer>
@@ -54,5 +63,12 @@ function titleToId(title: string) {
     >.next {
         margin-left: auto;
     }
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+
+    &>div {}
 }
 </style>
