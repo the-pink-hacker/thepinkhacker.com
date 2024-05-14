@@ -17,6 +17,8 @@ export default defineNuxtConfig({
                 "toml",
                 "asm",
                 "typescript",
+                "c",
+                "c++",
             ],
         },
     },
