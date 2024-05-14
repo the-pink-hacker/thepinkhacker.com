@@ -26,6 +26,7 @@ function titleToId(title: string) {
                 </SideCardContainer>
                 <header>
                     <ProseH1 v-if="title" :id="titleToId(title)" :render="true">{{ title }}</ProseH1>
+                    <img :src="logo" />
                     <div>
                         <IconRoute to="/blog/rss" icon="rss_feed" font-pack="material-icons" />
                     </div>
