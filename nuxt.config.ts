@@ -9,6 +9,7 @@ export default defineNuxtConfig({
     modules: [
         "@nuxt/content",
         "@nuxtjs/robots",
+        "@nuxtjs/sitemap",
     ],
     content: {
         highlight: {
@@ -30,6 +31,17 @@ export default defineNuxtConfig({
                 UserAgent: "GPTBot",
                 Disallow: "/",
             },
+            {
+                Sitemap: "https://thepinkhacker.com/sitemap.xml"
+            },
+        ],
+    },
+    site: {
+        url: "https://thepinkhacker.com",
+    },
+    sitemap: {
+        sources: [
+            "/api/__sitemap__/urls"
         ],
     },
 });

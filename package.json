@@ -25,10 +25,12 @@
   },
   "dependencies": {
     "@nuxtjs/robots": "^3.0.0",
+    "@nuxtjs/sitemap": "^5.2.0",
     "firebase": "^10.11.1",
     "firebase-admin": "^12.1.0",
     "firebase-functions": "^4.9.0",
     "firebase-tools": "^13.4.5",
+    "h3": "^1.11.1",
     "rss": "^1.2.2",
     "vite": "^5.2.10",
     "vue": "^3.4.26"
