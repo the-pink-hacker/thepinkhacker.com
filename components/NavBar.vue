@@ -4,6 +4,12 @@ const isMenuOpen = ref(false);
 function toggleMenu() {
     isMenuOpen.value = !isMenuOpen.value;
 }
+
+onMounted(() => {
+    document.querySelector("main")?.addEventListener("click", () => {
+        isMenuOpen.value = false;
+    });
+});
 </script>
 
 <template>
