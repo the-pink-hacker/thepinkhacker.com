@@ -1,15 +1,22 @@
+<script setup>
+const { path } = useRoute();
+const { data: posts } = await useAsyncData(`content-${path}`, () => {
+    const query = queryContent("/blog/post")
+        .only(["_path", "title", "description", "date"])
+        .sort({ title: -1 });
+
+    if (!process.dev) query.where({ _partial: false });
+
+    return query.find();
+});
+</script>
+
 <template>
     <h1>Welcome To My Blog</h1>
     <div class="blog-posts">
-        <ContentQuery :only="['_path', 'title', 'description', '_draft', 'date']" v-slot="{ data }" path="/blog"
-            :sort="{ title: -1 }">
-            <template v-for="{ _path, title, description, _draft, date } in data">
-                <BlogPostCard v-if="!_draft" :path="_path" :title="title" :description="description" :date="date" />
-                <DevOnly v-else>
-                    <BlogPostCard :path="_path" :title="title" :description="description" :date="date" />
-                </DevOnly>
-            </template>
-        </ContentQuery>
+        <template v-for="{ _path, title, description, date } in posts">
+            <BlogPostCard :path="_path" :title="title" :description="description" :date="date" />
+        </template>
     </div>
 </template>
 

@@ -3,7 +3,8 @@ import { serverQueryContent } from "#content/server";
 
 export default defineCachedEventHandler(async (event) => {
     const posts = await serverQueryContent(event, "/blog/post")
-        .only(["title", "description", "date", "_draft", "_path"])
+        .only(["title", "description", "date", "_path"])
+        .where({ _partial: false });
         .find();
 
     const feed = new RSS({
@@ -13,9 +14,7 @@ export default defineCachedEventHandler(async (event) => {
         feed_url: "https://thepinkhacker.com/blog/rss",
     });
 
-    for (const { description, title, date, _draft, _path } of posts) {
-        if (_draft) continue;
-
+    for (const { description, title, date, _path } of posts) {
         feed.item({
             title: title ?? "Untitled Post",
             url: `https://thepinkhacker.com${_path}`,

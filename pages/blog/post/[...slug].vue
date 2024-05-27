@@ -1,11 +1,11 @@
 <script setup lang="ts">
 const { path } = useRoute();
 
-const { data: surrounding } = await useAsyncData(`content-${path}`, () => {
-    return queryContent("/blog/post")
-        .only("_path")
-        .findSurround(path);
-});
+const { data: surrounding } = await useAsyncData(`content-${path}`, () => queryContent("/blog/post")
+    .only("_path")
+    .where({ _partial: false })
+    .findSurround(path)
+);
 
 function titleToId(title: string) {
     return title.toLowerCase().replaceAll(" ", "-");
