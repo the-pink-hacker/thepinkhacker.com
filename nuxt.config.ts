@@ -8,7 +8,6 @@ export default defineNuxtConfig({
     ],
     modules: [
         "@nuxt/content",
-        "@nuxtjs/robots",
         "@nuxtjs/sitemap",
     ],
     content: {
@@ -23,18 +22,6 @@ export default defineNuxtConfig({
                 "c++",
             ],
         },
-    },
-    robots: {
-        rules: [
-            // Block OpenAI from scraping.
-            {
-                UserAgent: "GPTBot",
-                Disallow: "/",
-            },
-            {
-                Sitemap: "https://thepinkhacker.com/sitemap.xml"
-            },
-        ],
     },
     site: {
         url: "https://thepinkhacker.com",

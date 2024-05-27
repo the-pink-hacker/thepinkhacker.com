@@ -1,0 +1,8 @@
+UserAgent: *
+Disallow:
+
+# Block OpenAI from scraping.
+UserAgent: GPTBot
+Disallow: /
+
+Sitemap: https://thepinkhacker.com/sitemap.xml
