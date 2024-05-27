@@ -24,6 +24,7 @@
     "unocss": "^0.59.4"
   },
   "dependencies": {
+    "@nuxtjs/robots": "^3.0.0",
     "firebase": "^10.11.1",
     "firebase-admin": "^12.1.0",
     "firebase-functions": "^4.9.0",

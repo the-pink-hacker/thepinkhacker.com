@@ -8,6 +8,7 @@ export default defineNuxtConfig({
     ],
     modules: [
         "@nuxt/content",
+        "@nuxtjs/robots",
     ],
     content: {
         highlight: {
@@ -21,5 +22,14 @@ export default defineNuxtConfig({
                 "c++",
             ],
         },
+    },
+    robots: {
+        rules: [
+            // Block OpenAI from scraping.
+            {
+                UserAgent: "GPTBot",
+                Disallow: "/",
+            },
+        ],
     },
 });
