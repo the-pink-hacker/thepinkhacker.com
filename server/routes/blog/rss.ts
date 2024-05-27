@@ -4,7 +4,7 @@ import { serverQueryContent } from "#content/server";
 export default defineCachedEventHandler(async (event) => {
     const posts = await serverQueryContent(event, "/blog/post")
         .only(["title", "description", "date", "_path"])
-        .where({ _partial: false });
+        .where({ _partial: false })
         .find();
 
     const feed = new RSS({
