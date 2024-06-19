@@ -13,16 +13,9 @@ const { data: posts } = await useAsyncData(`content-${path}`, () => {
 
 <template>
     <h1>Welcome To My Blog</h1>
-    <div class="blog-posts">
+    <GridContainer>
         <template v-for="{ _path, title, description, date } in posts">
             <BlogPostCard :path="_path" :title="title" :description="description" :date="date" />
         </template>
-    </div>
+    </GridContainer>
 </template>
-
-<style lang="scss">
-.blog-posts {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
-}
-</style>
