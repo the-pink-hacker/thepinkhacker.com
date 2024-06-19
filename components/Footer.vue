@@ -5,7 +5,7 @@
     <p>Hosted on: <a href="https://firebase.google.com/">Firebase</a></p>
     <p>Source code hosted on: <a href="https://github.thepinkhacker.com/thepinkhacker.com">GitHub</a></p>
     <p>Spot an issue? Checkout the tracker on <a
-        hred="https://github.thepinkhacker.com/thepinkhacker.com/issues">GitHub</a></p>
+        href="https://github.thepinkhacker.com/thepinkhacker.com/issues">GitHub</a></p>
   </footer>
 </template>
 
