@@ -2,6 +2,8 @@
 logo: https://media.forgecdn.net/avatars/478/208/637773649648384039.png
 title: Apollo
 description: Apollo is a modern space Minecraft Mod; currently, the project is on pause.
+projectType: modrinth
+projectId: rQU8oPFc
 ---
 
 Me and many other people loved space mods like Galacticraft, but they're on old versions of Minecraft. Apollo is a space mod the utilizes newer aspects of Minecraft like custom worlds through datapacks. Apollo is still actively developing and improving. I will take feedback, but remember that early on there will be many placeholder features and textures.

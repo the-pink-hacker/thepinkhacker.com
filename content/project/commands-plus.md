@@ -2,6 +2,8 @@
 logo: https://media.forgecdn.net/avatars/569/858/637930634199896245.png
 title: Commands+
 description: Commands+ adds QoL commands to Minecraft.
+projectType: modrinth
+projectId: YlwIVI6M
 ---
 
 Commands+ adds QoL commands and some old commands that were removed.

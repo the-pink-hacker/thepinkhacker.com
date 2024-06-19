@@ -9,10 +9,8 @@ projectLinks:
   - name: Modrinth
     url: https://modrinth.com/resourcepack/classic-3d
     icon: https://raw.githubusercontent.com/modrinth/labrinth/master/assets/logo.svg
-
-projectVersions:
-  - name: v15.2 - 1.19.3
-    download: https://cdn.modrinth.com/data/FRSckbRo/versions/8LO93Xf4/%C2%A76%C2%A7lClassic%203D%20v15.2%20-%201.19.zip
+projectType: modrinth
+projectId: FRSckbRo
 ---
 
 > **Notice**

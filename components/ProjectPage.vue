@@ -1,6 +1,9 @@
+<script lang="ts" setup>
+</script>
+
 <template>
     <DocumentContainer>
-        <ContentDoc v-slot="{ doc, doc: { logo, title, projectVersions, projectLinks } }">
+        <ContentDoc v-slot="{ doc, doc: { logo, title, projectLinks, projectType, projectId } }">
             <header>
                 <h1>
                     {{ title }}
@@ -25,12 +28,9 @@
                         </ul>
                     </SideCard>
 
-                    <SideCard>
+                    <SideCard v-if="projectType == 'modrinth'">
                         <template #title>Files</template>
-
-                        <div v-for="{ name, download } in projectVersions">
-                            <a :href="download">{{ name }}</a>
-                        </div>
+                        <ModrinthFileList :project-id="projectId" />
                     </SideCard>
                 </div>
             </SideCardContainer>
