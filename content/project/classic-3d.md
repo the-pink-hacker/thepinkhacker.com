@@ -4,7 +4,7 @@ title: Classic 3D
 description: Classic 3D is a resourcepack aimed at adding more detail to the models in Minecraft while preserving the overall look and feel.
 projectLinks:
   - name: GitHub
-    url: https://github.thepinkhacker.com/classic-3d
+    url: https://github.thepinkhacker.com/classic-3d-redux
     icon: https://github.githubassets.com/favicons/favicon-dark.svg
   - name: Modrinth
     url: https://modrinth.com/resourcepack/classic-3d
@@ -15,56 +15,39 @@ projectVersions:
     download: https://cdn.modrinth.com/data/FRSckbRo/versions/8LO93Xf4/%C2%A76%C2%A7lClassic%203D%20v15.2%20-%201.19.zip
 ---
 
-Classic 3D is a resource pack that turns the default models into more complex and detailed blocks, while still looking like Minecraft.
-
-![Sunset](https://cdn.modrinth.com/data/FRSckbRo/images/6eead911f919a0067bf88bc1ae617c3ef97a9e47.png "Credit: Falcon's Rock")
-
-![Streets](https://cdn.modrinth.com/data/FRSckbRo/images/925fd0857bd7fdf1cd28b66934b13baf8c6b64cc.png "Credit: Falcon's Rock")
-
-![Streets](https://cdn.modrinth.com/data/FRSckbRo/images/b8bc8a3611744374b12cb3e5e93753bd36561655.png "Credit: Falcon's Rock")
-
-## Classic 3D Official Variants
-
-- [Classic 3D - Mod Support](https://www.curseforge.com/minecraft/texture-packs/classic-3d-mod)
-- [Classic 3D - Logs](https://www.curseforge.com/minecraft/texture-packs/classic-3d-logs)
-- [Classic 3D - Lite](https://www.curseforge.com/minecraft/texture-packs/classic-3d-lite)
-
-## Links
-
-To get news and updates about the Classic 3D, go here:
-
-[Classic 3D's Tumblr](https://classic3d.tumblr.com)
-
----
-
-If you have a suggestion or technical problem then go to the issues page on [GitHub](https://github.com/RyanGar46/Classic-3D/issues).
+> **Notice**
+>
+> Classic 3D is begin rebuilt from the ground up.
+> At the moment, these builds are still missing many features.
+>
+> Legacy Builds:
+>
+> - [Modrinth](https://modrinth.com/resourcepack/classic-3d/versions?c=release) (v15.1-15.2)
+> - [Classic 3D Repo](https://github.thepinkhacker.com/Classic-3D/releases) (v14-1.15.2).
+> - [My Curseforge Archive](https://github.thepinkhacker.com/curseforge) (v1.0-15.2).
 
 ## Credits
 
-Some textures by:
+Additional Textures:
 
-[GodAmongDessert](https://instagram.com/godamongdessert/)
+[mushpiee](https://www.instagram.com/mushpiee/)
 
----
+Created By:
 
-Created by:
+[ThePinkHacker](https://thepinkhacker.com/)
 
-[Ryan (ThePinkHacker)](/)
+Tools:
 
----
-
-Built using
-
-[Resource Pack Packer](https://github.com/RyanThePinkHacker/resource-pack-packer)
-
----
-
-Models created with:
+[MCPacker](https://github.thepinkhacker.com/mcpacker)
 
 [Blockbench](https://www.blockbench.net)
 
-## Info
+## Additional Info
 
-The only official download websites for Classic 3D are [Modrinth](https://modrinth.com/resourcepack/classic-3d), [CurseForge](https://www.curseforge.com/minecraft/texture-packs/classic-3d) and [Planet Minecraft](https://www.planetminecraft.com/texture-pack/classic-3d-4384051/). Don't download Classic 3D from any other website.
+The only official website for Classic 3D is [Modrinth](https://modrinth.com/resourcepack/classic-3d); don't download Classic 3D from any other website.
 
-This resource pack works best with [Sodium](https://modrinth.com/mod/sodium). This dramatically improves the frame rate with complex large areas like the nether.
+This resource pack works best with [Sodium](https://modrinth.com/mod/sodium). This dramatically improves the frame rate in complex areas like the nether.
+
+Suggestions and technical issues should be filed on [GitHub](https://github.thepinkhacker.com/classic-3d-redux/issues).
+
+Feel free to feature Classic 3D in videos. Don't claim ownership of Classic 3D and credit this Modrinth page whenever possible. Classic 3D is licensed under the [CC-BY-SA-4.0](https://github.thepinkhacker.com/classic-3d-redux/blob/main/LICENSE.md).
