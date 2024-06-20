@@ -6,7 +6,13 @@ function toggleMenu() {
 }
 
 onMounted(() => {
-    document.querySelector("main")?.addEventListener("click", () => {
+    document.body.addEventListener("click", (e) => {
+        const target = e.target as HTMLElement;
+        const nav = document.querySelector("nav");
+        const is_nav = nav?.contains(target)
+
+        if (is_nav) return;
+
         isMenuOpen.value = false;
     });
 });
