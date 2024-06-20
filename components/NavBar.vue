@@ -36,7 +36,7 @@ onMounted(() => {
                 <RouterLink to="/blog" class="navbar-title">Blog</RouterLink>
                 <RouterLink to="/" class="navbar-title">Projects</RouterLink>
                 <RouterLink to="/ez80/opcode" class="navbar-title">EZ80</RouterLink>
-                <RouterLink to="/" class="navbar-title">About</RouterLink>
+                <RouterLink to="/about" class="navbar-title">About</RouterLink>
             </div>
         </div>
     </nav>

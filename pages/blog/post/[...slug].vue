@@ -6,10 +6,6 @@ const { data: surrounding } = await useAsyncData(`content-${path}`, () => queryC
     .where({ _partial: false })
     .findSurround(path)
 );
-
-function titleToId(title: string) {
-    return title.toLowerCase().replaceAll(" ", "-");
-}
 </script>
 
 <!--TODO: Add minimize button for table of contents-->
@@ -20,12 +16,11 @@ function titleToId(title: string) {
                 <SideCardContainer>
                     <SideCard :top-divider="false" :bottom-divider="true">
                         <template #title>Table of Contents</template>
-                        <TableOfContentsItem id="" :depth="1" :text="title" :children="toc.links"
-                            :content-top="titleToId(title)" />
+                        <TableOfContentsItem id="" :depth="1" :text="title" :children="toc.links" />
                     </SideCard>
                 </SideCardContainer>
                 <header>
-                    <ProseH1 v-if="title" :id="titleToId(title)" :render="true">{{ title }}</ProseH1>
+                    <ProseH1 v-if="title" :render="true">{{ title }}</ProseH1>
                     <img :src="logo" />
                     <div>
                         <IconRoute to="/blog/rss" icon="rss_feed" font-pack="material-icons" />
