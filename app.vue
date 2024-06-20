@@ -25,6 +25,14 @@ useHead({
         },
     ],
 });
+
+useSeoMeta({
+    title: "The Pink Hacker",
+    description: "A personal website.",
+    ogTitle: "The Pink Hacker",
+    ogDescription: "A personal website",
+    ogImage: "/public/image/icon/the-finite-doctor.png",
+});
 </script>
 
 <template>

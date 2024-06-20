@@ -1,12 +1,3 @@
-<script lang="ts" setup>
-useSeoMeta({
-    title: "The Pink Hacker",
-    description: "A personal website.",
-    ogTitle: "The Pink Hacker",
-    ogDescription: "A personal website",
-});
-</script>
-
 <template>
     <h1 style="text-align: center;">Welcome To My Website</h1>
     <SeparatedSectionHorizontal>

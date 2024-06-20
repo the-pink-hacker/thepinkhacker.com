@@ -9,6 +9,13 @@ const { data: posts } = await useAsyncData(`content-${path}`, () => {
 
     return query.find();
 });
+
+useSeoMeta({
+    title: "Pink's Blog",
+    description: "A personal blog about whatever I'm working on.",
+    ogTitle: "Pink's Blog",
+    ogDescription: "A personal blog about whatever I'm working on.",
+})
 </script>
 
 <template>
