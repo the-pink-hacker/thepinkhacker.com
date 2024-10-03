@@ -1,28 +1,21 @@
 <script lang="ts" setup>
-defineProps({
-    path: {
-        type: String,
-        required: true,
-    },
-    title: {
-        type: String,
-        default: "Untitled",
-    },
-    description: {
-        type: String,
-        default: "",
-    },
-    date: String,
-});
+defineProps<{
+    path?: string,
+    title?: string,
+    description?: string,
+    date?: string,
+    tags?: string[],
+}>();
 </script>
 
 <template>
     <article class="blog-post-card">
         <h1>
-            <NuxtLink :to="path">{{ title }}</NuxtLink>
+            <NuxtLink :to="path">{{ title ?? "Untitled" }}</NuxtLink>
         </h1>
         <Timestamp v-if="date" :date="date" />
-        <p>{{ description }}</p>
+        <p v-if="description">{{ description }}</p>
+        <Tags :tags="tags" />
     </article>
 </template>
 

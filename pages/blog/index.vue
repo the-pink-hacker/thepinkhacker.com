@@ -2,7 +2,7 @@
 const { path } = useRoute();
 const { data: posts } = await useAsyncData(`content-${path}`, () => {
     const query = queryContent("/blog/post")
-        .only(["_path", "title", "description", "date"])
+        .only(["_path", "title", "description", "date", "tags"])
         .sort({ title: -1 });
 
     if (!process.dev) query.where({ _partial: false });
@@ -21,8 +21,8 @@ useSeoMeta({
 <template>
     <h1>Welcome To My Blog</h1>
     <GridContainer>
-        <template v-for="{ _path, title, description, date } in posts">
-            <BlogPostCard :path="_path" :title="title" :description="description" :date="date" />
+        <template v-for="{ _path, title, description, date, tags} in posts">
+            <BlogPostCard :path="_path" :title="title" :description="description" :date="date" :tags="tags" />
         </template>
     </GridContainer>
 </template>

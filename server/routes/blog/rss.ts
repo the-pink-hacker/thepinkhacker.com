@@ -3,7 +3,7 @@ import { serverQueryContent } from "#content/server";
 
 export default defineCachedEventHandler(async (event) => {
     const posts = await serverQueryContent(event, "/blog/post")
-        .only(["title", "description", "date", "_path"])
+        .only(["title", "description", "date", "_path", "tags"])
         .where({ _partial: false })
         .find();
 
@@ -12,14 +12,18 @@ export default defineCachedEventHandler(async (event) => {
         description: "My personal blog about whatever projects I'm working on at the moment.",
         site_url: "https://thepinkhacker.com/blog",
         feed_url: "https://thepinkhacker.com/blog/rss",
+        categories: [
+            "blog"
+        ],
     });
 
-    for (const { description, title, date, _path } of posts) {
+    for (const { description, title, date, _path, tags } of posts) {
         feed.item({
             title: title ?? "Untitled Post",
             url: `https://thepinkhacker.com${_path}`,
             date,
             description,
+            categories: tags,
         });
     }
 

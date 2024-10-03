@@ -12,7 +12,7 @@ const { data: surrounding } = await useAsyncData(`content-${path}`, () => queryC
 <template>
     <DocumentContainer>
         <article>
-            <ContentDoc v-slot="{ doc, doc: { title, description, body: { toc }, logo, date } }">
+            <ContentDoc v-slot="{ doc, doc: { title, description, body: { toc }, logo, date, tags } }">
                 <SideCardContainer>
                     <SideCard :top-divider="false" :bottom-divider="true">
                         <template #title>Table of Contents</template>
@@ -28,6 +28,7 @@ const { data: surrounding } = await useAsyncData(`content-${path}`, () => queryC
                     <div v-if="date">Created:
                         <Timestamp :date="date" />
                     </div>
+                    <Tags :tags="tags" />
                 </header>
                 <hr />
                 <section>
