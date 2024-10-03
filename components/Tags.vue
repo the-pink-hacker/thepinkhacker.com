@@ -13,3 +13,12 @@ defineProps<{
         </li>
     </ul>
 </template>
+
+<style lang="scss" scoped>
+ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    flex-wrap: wrap;
+}
+</style>
