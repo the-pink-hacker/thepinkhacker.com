@@ -16,7 +16,12 @@ useHead({
         {
             rel: "stylesheet",
             href: "https://fonts.googleapis.com/icon?family=Material+Icons",
-        }
+        },
+        {
+            rel: "alternate",
+            href: "/blog/rss",
+            type: "application/rss+xml",
+        },
     ],
     meta: [
         {
