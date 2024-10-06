@@ -12,5 +12,6 @@ defineProps<{
 <style scoped>
 img {
     image-rendering: pixelated;
+    margin: 16px auto;
 }
 </style>
