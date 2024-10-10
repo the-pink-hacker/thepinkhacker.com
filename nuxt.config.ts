@@ -32,4 +32,7 @@ export default defineNuxtConfig({
             "/api/__sitemap__/urls"
         ],
     },
+    nitro: {
+        compressPublicAssets: true,
+    },
 });
