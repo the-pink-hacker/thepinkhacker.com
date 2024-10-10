@@ -51,8 +51,7 @@ async function copyCode(event: MouseEvent | KeyboardEvent) {
 </script>
 
 <template>
-    <pre
-        :class="$props.class"><button class="copy-widget" :class="copied ? 'copied' : ''" @keydown="copyCode"><span class="material-icons" @click="copyCode">content_copy</span></button><slot /></pre>
+    <pre :class="$props.class"><button class="copy-widget" :class="copied ? 'copied' : ''" @keydown="copyCode"><span class="material-icons" @click="copyCode">content_copy</span></button><slot /></pre>
 </template>
 
 <style lang="scss">
@@ -78,7 +77,8 @@ pre {
     position: relative;
 
     code {
-        white-space: pre-line;
+        white-space: pre;
+        overflow-x: scroll;
 
         .line {
             font-size: 0.9rem;
