@@ -6,6 +6,10 @@ const { data: surrounding } = await useAsyncData(`content-${path}`, () => queryC
     .where({ _partial: false })
     .findSurround(path)
 );
+
+function tagsToKeywords(tags: string[]) {
+    return tags.join(",");
+}
 </script>
 
 <!--TODO: Add minimize button for table of contents-->
@@ -42,6 +46,7 @@ const { data: surrounding } = await useAsyncData(`content-${path}`, () => queryC
 
                 <Meta property="og:image" :content="logo" />
                 <Meta property="og:description" :content="description" />
+                <Meta property="keywords" :content="tagsToKeywords(tags)" />
             </ContentDoc>
         </article>
     </DocumentContainer>
