@@ -22,6 +22,10 @@ useHead({
             href: "/blog/rss",
             type: "application/rss+xml",
         },
+        {
+            rel: "apple-touch-icon",
+            href: "https://thepinkhacker.com/image/icon/the-finite-doctor.png",
+        },
     ],
     meta: [
         {
