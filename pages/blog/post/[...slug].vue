@@ -16,7 +16,7 @@ function tagsToKeywords(tags: string[]) {
 <template>
     <DocumentContainer>
         <article>
-            <ContentDoc v-slot="{ doc, doc: { title, description, body: { toc }, logo, date, tags } }">
+            <ContentDoc v-slot="{ doc, doc: { title, description, body: { toc }, logo, logoAlt, date, tags } }">
                 <SideCardContainer>
                     <SideCard :top-divider="false" :bottom-divider="true">
                         <template #title>Table of Contents</template>
@@ -25,7 +25,7 @@ function tagsToKeywords(tags: string[]) {
                 </SideCardContainer>
                 <header>
                     <ProseH1 v-if="title" :render="true">{{ title }}</ProseH1>
-                    <img :src="logo" />
+                    <img :src="logo" :alt="logoAlt" />
                     <div>
                         <IconRoute to="/blog/rss" icon="rss_feed" font-pack="material-icons" />
                     </div>
@@ -45,6 +45,7 @@ function tagsToKeywords(tags: string[]) {
                 </section>
 
                 <Meta property="og:image" :content="logo" />
+                <Meta property="og:image:alt" :content="logoAlt" />
                 <Meta property="og:description" :content="description" />
                 <Meta property="keywords" :content="tagsToKeywords(tags)" />
             </ContentDoc>
