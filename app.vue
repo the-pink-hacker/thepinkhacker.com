@@ -32,6 +32,10 @@ useHead({
             name: "viewport",
             content: "width=device-width; user-scalable=yes",
         },
+        {
+            name: "fediverse:creator",
+            content: "@ThePinkHacker@social.linux.pizza",
+        },
     ],
 });
 
