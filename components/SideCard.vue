@@ -26,7 +26,7 @@ defineProps({
 </template>
 
 <style lang="scss">
-@import "/assets/style/abstract/mixins";
+@use "/assets/style/abstract/mixins";
 
 .side-card>.card-header {
     text-align: center;
@@ -36,7 +36,7 @@ defineProps({
 
 @media screen and (min-width: 75rem) {
     .side-card {
-        @include bordered-block;
+        @include mixins.bordered-block;
         margin: 2rem;
 
         &>hr {

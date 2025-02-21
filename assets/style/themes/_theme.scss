@@ -19,6 +19,8 @@
   --image-zoom-move: 12.5%;
 }
 
-@media (prefers-color-scheme: light) {
-  @import "light";
-}
+//@media (prefers-color-scheme: light) {
+//  :root {
+//    color-scheme: light;
+//  }
+//}

@@ -1,4 +1,3 @@
-import { serverQueryContent } from "#content/server";
 import { asSitemapUrl, defineSitemapEventHandler } from "#imports";
 
 export default defineSitemapEventHandler(async (e) =>

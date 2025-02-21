@@ -14,9 +14,9 @@ defineProps({
 </template>
 
 <style lang="scss">
-@import "/assets/style/abstract/mixins";
+@use "/assets/style/abstract/mixins";
 
 .bordered-block {
-    @include bordered-block;
+    @include mixins.bordered-block;
 }
 </style>

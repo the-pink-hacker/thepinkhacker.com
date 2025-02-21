@@ -1,19 +1,19 @@
 //#region - Abstract
-@import "~/assets/style/abstract/mixins";
+@use "~/assets/style/abstract/mixins";
 //#endregion
 
 //#region - Base
-@import "~/assets/style/base/root";
+@use "~/assets/style/base/root";
 //#endregion
 
 //#region - Components
-@import "~/assets/style/components/link";
+@use "~/assets/style/components/link";
 //#endregion
 
 //#region - Layout
-@import "~/assets/style/layout/body";
+@use "~/assets/style/layout/body";
 //#endregion
 
 //#region - Themes
-@import "~/assets/style/themes/theme";
+@use "~/assets/style/themes/theme";
 //#endregion

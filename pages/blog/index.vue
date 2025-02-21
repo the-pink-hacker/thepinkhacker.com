@@ -1,13 +1,12 @@
 <script setup>
 const { path } = useRoute();
-const { data: posts } = await useAsyncData(`content-${path}`, () => {
-    const query = queryContent("/blog/post")
-        .only(["_path", "title", "description", "date", "tags"])
-        .sort({ date: -1, $numeric: true });
+const { data } = await useAsyncData(`content-${path}`, () => {
+    const query = queryCollectionNavigation("blog", [ "description", "date", "tags"])
+        .order("date", "DESC");
 
-    if (!process.dev) query.where({ _partial: false });
+    if (!process.dev) query.where("date", "IS NOT NULL");
 
-    return query.find();
+    return query;
 });
 
 useSeoMeta({
@@ -21,8 +20,8 @@ useSeoMeta({
 <template>
     <h1>Welcome To My Blog</h1>
     <GridContainer>
-        <template v-for="{ _path, title, description, date, tags} in posts">
-            <BlogPostCard :path="_path" :title="title" :description="description" :date="date" :tags="tags" />
+        <template v-for="{ path, title, description, date, tags } in data[0].children[0].children">
+            <BlogPostCard :path="path" :title="title" :description="description" :date="date" :tags="tags" />
         </template>
     </GridContainer>
 </template>
