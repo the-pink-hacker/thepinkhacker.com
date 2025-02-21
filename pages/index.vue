@@ -16,7 +16,7 @@
             </ProjectGalleryCard>
             <ProjectGalleryCard image="https://media.forgecdn.net/avatars/569/858/637930634199896245.png"
                 to="/project/commands-plus">
-                Commands+
+                Decree
             </ProjectGalleryCard>
         </GridContainer>
     </SeparatedSectionHorizontal>
