@@ -11,17 +11,21 @@ export default defineNuxtConfig({
         "@nuxt/content",
     ],
     content: {
-        highlight: {
-            theme: "github-dark",
-            preload: [
-                "rust",
-                "toml",
-                "asm",
-                "typescript",
-                "c",
-                "c++",
-                "hjson",
-            ],
+        build: {
+            markdown: {
+                highlight: {
+                    theme: "github-dark",
+                    langs: [
+                        "rust",
+                        "toml",
+                        "asm",
+                        "typescript",
+                        "c",
+                        "cpp",
+                        "hjson",
+                    ],
+                },
+            },
         },
     },
     site: {
